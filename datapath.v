@@ -4,7 +4,7 @@ r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, PC_in, IR_in, Y_in
 
 	//data out wires
 	
-	//register out r0-r15
+	//register out r0-r15 wires
 	wire [31:0] r0_out;
 	wire [31:0] r1_out;
 	wire [31:0] r2_out;
@@ -33,6 +33,7 @@ r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, PC_in, IR_in, Y_in
 	
 	wire [31:0] BUS_data;
 	
+	//Register setup
 	register_32bit R0(clk, clr, r0_in, BUS_data, r0_out);
 	register_32bit R1(clk, clr, r1_in, BUS_data, r1_out);
 	register_32bit R2(clk, clr, r2_in, BUS_data, r2_out);
@@ -58,5 +59,7 @@ r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, PC_in, IR_in, Y_in
 	register_32bit ZHI(clk, clr, Z_in, BUS_data, ZHI_out);
 	register_32bit ZLOW(clk, clr, Z_in, BUS_data, ZLOW_out);
 	register_32bit MAR(clk, clr, MAR_in, BUS_data, MAR_out);
+	
+	
 	
 endmodule
