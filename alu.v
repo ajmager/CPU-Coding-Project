@@ -25,15 +25,15 @@ module alu(
         4'b0101: // OR
            ALU_Result = A | B;
         4'b0110: // shift left
-           ALU_Result = A<<1 ;
+           ALU_Result = B<<1 ;
         4'b0111: // shift right
-           ALU_Result = A>>1; 
+           ALU_Result = B>>1; 
         4'b1000: // rotate left
-           ALU_Result = {A[30:0,A[31]};
+           ALU_Result = {B[30:0,B[31]};
         4'b1001: // rotate right
-           ALU_Result = {A[0],A[31:1]};                      
+           ALU_Result = {B[0],B[31:1]};                      
         4'b1010: // negate
-           ALU_Result = ~A; 
+           ALU_Result = ~B; 
         4'b1011: // XOR   
            ALU_Result = A ^ B; 
         4'b1100: // NOR
