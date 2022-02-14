@@ -10,7 +10,7 @@ module boothmul(X, Y, Z,en);
 	reg [31:0] Y1;
 	always @ (X, Y,en)
 		begin
-			Z = 32'd0;
+			Z = 64'd0;
 			E1 = 1'd0;
 			Y1 = ~Y;
 			Z[63:0]=X;
