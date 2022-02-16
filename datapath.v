@@ -1,7 +1,9 @@
 //datapath.v
 module datapath (clk, clr, reset, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, 
-r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, PC_in, IR_in, Y_in, Z_in,
-MAR_in, MDR_in, inPort_in);
+r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, 
+PC_in, IR_in, Y_in, Z_in,
+MAR_in, MDR_in, 
+inPort_in);
 
 	//data out wires
 	
