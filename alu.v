@@ -4,8 +4,8 @@ module alu(
            output [31:0] ALU_Out, // ALU 8-bit Output
            output CarryOut // Carry Out Flag
     );
-    reg [32:0] ALU_Result;
-    wire [8:0] tmp;
+    reg [31:0] ALU_Result;
+    wire [63:0] tmp;
     assign ALU_Out = ALU_Result; // ALU out
     assign tmp = {1'b0,A} + {1'b0,B};
     assign CarryOut = tmp[8]; // Carryout flag
@@ -31,7 +31,7 @@ module alu(
         4'b1000: // rotate left
            ALU_Result = {B[30:0,B[31]};
         4'b1001: // rotate right
-           ALU_Result = {B[0],B[31:1]};                      
+           ALU_Result = {B[0],B[31:1]};
         4'b1010: // negate
            ALU_Result = ~B; 
         4'b1011: // XOR   
