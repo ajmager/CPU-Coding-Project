@@ -1,6 +1,6 @@
 //32:5 bit encoder
 
-module encoder_32_5(output reg [4:0] Code,input [32:0] Data);
+module encoder_32_5(output reg [4:0] Code, input [32:0] Data);
 
 always @(Data)
 case (Data)

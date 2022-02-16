@@ -2,9 +2,9 @@
 
 module register_32(
 
-input 				clk, clr, enable;
-input		[31:0]	input_D;
-output	[31:0]	output_Q;
+input						clk, clr, enable;
+input reg	[31:0]	input_D;
+output reg	[31:0]	output_Q;
 );
 
 always @ (posedge clk)

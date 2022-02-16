@@ -33,7 +33,83 @@ r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, PC_in, IR_in, Y_in
 	
 	wire [31:0] BUS_data;
 	
-	//Register setup
+	integer ready = 5'b00000;
+	
+	if (r0_out) begin
+		ready <= 5'b00001;
+	end
+	if (r1_out) begin
+		ready <= 5'b00010;
+	end
+	if (r2_out) begin
+		ready <= 5'b00011;
+	end	
+	if (r3_out) begin
+		ready <= 5'b00100;
+	end
+	if (r4_out) begin
+		ready <= 5'b00101;
+	end
+	if (r5_out) begin
+		ready <= 5'b00110;
+	end
+	if (r6_out) begin
+		ready <= 5'b00111;
+	end
+	if (r7_out) begin
+		ready <= 5'b01000;
+	end
+	if (r8_out) begin
+		ready <= 5'b01001;
+	end
+	if (r9_out) begin
+		ready <= 5'b01010;
+	end
+	if (r10_out) begin
+		ready <= 5'b01011;
+	end
+	if (r11_out) begin
+		ready <= 5'b01100;
+	end
+	if (r12_out) begin
+		ready <= 5'b01101;
+	end
+	if (r13_out) begin
+		ready <= 5'b01110;
+	end
+	if (r14_out) begin
+		ready <= 5'b01111;
+	end
+	if (r15_out) begin
+		ready <= 5'b10000;
+	end
+	if (PC_out) begin
+		ready <= 5'b10001;
+	end
+	if (HI_out) begin
+		ready <= 5'b10010;
+	end
+	if (LO_out) begin
+		ready <= 5'b10011;
+	end
+	if (IR_out) begin
+		ready <= 5'b10100;
+	end
+	if (Y_out) begin
+		ready <= 5'b10101;
+	end
+	if (ZHI_out) begin
+		ready <= 5'b10110;
+	end	
+	if (ZLOW_out) begin
+		ready <= 5'b10111;
+	end
+	if (MAR_out) begin
+		ready <= 5'b11000;
+	end
+	
+
+	//32 bit Register setup
 	register_32 R0(clk, clr, r0_in, BUS_data, r0_out);
 	register_32 R1(clk, clr, r1_in, BUS_data, r1_out);
 	register_32 R2(clk, clr, r2_in, BUS_data, r2_out);
@@ -60,6 +136,12 @@ r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, PC_in, IR_in, Y_in
 	register_32 ZLOW(clk, clr, Z_in, BUS_data, ZLOW_out);
 	register_32 MAR(clk, clr, MAR_in, BUS_data, MAR_out);
 	
+	integer select;
 	
+	//Encoder - select signals S0 - S4
+	encoder_32_5 encoder(select, ready);
+	
+	//Bus
+	BusMux bus();
 	
 endmodule
