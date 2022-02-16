@@ -35,7 +35,7 @@ inPort_in);
 	wire [31:0] MAR_out;	//To memory chip
 	wire [31:0] MDR_out;	//To memory chip
 	wire [31:0] outPort_out;	//To I/O Units
-	//wire [31:0] inPort_out; 
+	wire [31:0] inPort_out; //to itself
 	
 	wire [31:0] BUS_data;
 	
@@ -141,7 +141,7 @@ inPort_in);
 	register_32 ZLOW(clk, clr, Z_in, BUS_data, ZLOW_out);
 	register_32 MAR(clk, clr, MAR_in, BUS_data, MAR_out);
 	register_32 MDR(clk, clr, MDR_in, BUS_data, MDR_out);
-	//register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
+	register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
 	
 	//ALU SETUP
 	
