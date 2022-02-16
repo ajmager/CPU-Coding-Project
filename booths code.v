@@ -1,8 +1,8 @@
-module boothmul(X, Y, Z,en);
+module boothmul(X, Y, Z_Low, Z_High,en);
 	input signed [31:0] X, Y;
 	input en;
 	output signed [31:0] Z_Low, Z_High;
-	output signed [63:0] Z;
+	signed [63:0] Z;
 	reg signed [31:0] Z_High;
 	reg [31:0] Z_Low
 	reg signed [63:0] Z;
