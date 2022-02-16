@@ -2,6 +2,7 @@ module alu(
            input [31:0] A,B,  // ALU 8-bit Inputs                 
            input [3:0] ALU_Sel,// ALU Selection
            output [31:0] ALU_Out, // ALU 8-bit Output
+           output [31:0] Z_High, Z_Low;
            output CarryOut // Carry Out Flag
     );
     reg [31:0] ALU_Result;
@@ -17,9 +18,9 @@ module alu(
         4'b0001: // Subtraction
            ALU_Result = A - B ;
         4'b0010: // Multiplication  NEEDS TO BE CHANGED
-           ALU_Result = A * B;
+           boothmul INSTANTIATION(A, B, Z_Low, Z_High); 
         4'b0011: // Division - NEEDS TO BE CHANGED
-           ALU_Result = A/B;
+           div INSTANTIATION(clk, ready, A, B, Z_High, Z_Low); //Z_High is Q, Z_Low is R
         4'b0100: // AND
            ALU_Result = A & B;
         4'b0101: // OR
