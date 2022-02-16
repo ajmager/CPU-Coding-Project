@@ -155,6 +155,6 @@ inPort_in);
 	assign C_sign_extended ={14{IR_out[17]}, IR_out [17:0]};
 	
 	//Bus
-	BusMux bus(data_out, r0_out, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, HI, LO, ZHI, ZLOW, PC, MDR, inPort, C_sign_extended, select);
+	BusMux bus(data_out, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select);
 	
 endmodule
