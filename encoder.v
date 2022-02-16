@@ -1,10 +1,10 @@
 //32:5 bit encoder
 
-module encoder_32_5(output reg [4:0] Code, input [32:0] Data);
+module encoder_32_5(output reg [4:0] Code, input [31:0] Data);
 
-always @(Data)
-case (Data)
-32'h01			:	Code = 0;
+always @(Data) begin
+case (Data) begin
+32'h01			:	Code = 5'd0;
 32'h02			:	Code = 1;
 32'h04			:	Code = 2;
 32'h08			:	Code = 3;
@@ -37,6 +37,6 @@ case (Data)
 32'h40000000	:	Code = 20;
 32'h80000000	:	Code = 31;
 default			:	Code = 5'bx;
-
-endcase
+endcase			
+end
 endmodule

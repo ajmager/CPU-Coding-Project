@@ -1,6 +1,6 @@
 //datapath.v
-module datapath (clk, clr, reset, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, 
-r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, 
+module datapath (
+clk, clr, reset, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, 
 PC_in, IR_in, Y_in, Z_in,
 MAR_in, MDR_in, 
 inPort_in);
@@ -112,9 +112,8 @@ inPort_in);
 	end
 	if (MDR_out) begin
 		ready <= 5'b11000;
-	endhgbbbhghg
+	end
 	
-
 	//32 bit Register setup
 	register_32 R0(clk, clr, r0_in, BUS_data, r0_out);
 	register_32 R1(clk, clr, r1_in, BUS_data, r1_out);
@@ -144,14 +143,18 @@ inPort_in);
 	register_32 MDR(clk, clr, MDR_in, BUS_data, MDR_out);
 	//register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
 	
-	integer select;
+	//ALU SETUP
+	
+	wire[4:0] select;
 	
 	//Encoder - select signals S0 - S4
 	encoder_32_5 encoder(select, ready);
 	
-	output [31:0] data_out;
+	wire [31:0] data_out;
+	
+	assign C_sign_extended ={14{IR_out[17]}, IR_out [17:0]};
 	
 	//Bus
-	BusMux bus(data_out, R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, HI, LO, ZHI, ZLOW, PC, MDR, inPort, C_sign_extended, select);
+	BusMux bus(data_out, r0_out, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, HI, LO, ZHI, ZLOW, PC, MDR, inPort, C_sign_extended, select);
 	
 endmodule

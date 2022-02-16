@@ -15,9 +15,9 @@ input		[4:0]		select
 always @ (BusMuxIn_R0, BusMuxIn_R1, BusMuxIn_R2, BusMuxIn_R3, BusMuxIn_R4, 
 BusMuxIn_R5, BusMuxIn_R6, BusMuxIn_R7, BusMuxIn_R8, BusMuxIn_R9, BusMuxIn_R10, 
 BusMuxIn_R11, BusMuxIn_R12, BusMuxIn_R13, BusMuxIn_R14, BusMuxIn_R15, BusMuxIn_HI,
-BusMuxIn_LO, BusMuxIn_MDR, BusMuxIn_InPort, C_sign_extended, select)
+BusMuxIn_LO, BusMuxIn_MDR, BusMuxIn_InPort, C_sign_extended, select) begin
 
-case(select)
+case(select) begin
 0:			mux_out = BusMuxIn_R0;
 1:			mux_out = BusMuxIn_R1;
 2:			mux_out = BusMuxIn_R2;
@@ -45,4 +45,5 @@ case(select)
 24:		mux_out = C_sign_extended;
 default:	mux_out = 32'bx;
 endcase
+end
 endmodule
