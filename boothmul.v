@@ -1,10 +1,7 @@
 module boothmul(X, Y, Z_Low, Z_High,en);
 	input signed [31:0] X, Y;
 	input en;
-	output signed [31:0] Z_Low, Z_High;
-	signed [63:0] Z;
-	reg signed [31:0] Z_High;
-	reg [31:0] Z_Low
+	output signed [63:0] Z;
 	reg signed [63:0] Z;
 	reg [1:0] temp;
 	integer i;
@@ -27,7 +24,5 @@ module boothmul(X, Y, Z_Low, Z_High,en);
 				Z = Z >> 1;
 				Z[63] = Z[62];
 				E1 = X[i];
-		Z_Low[31:0] = Z[31:0];
-		Z_High[31:0] = Z[63:32];
 	end
 endmodule
