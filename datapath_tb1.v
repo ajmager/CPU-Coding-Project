@@ -1,6 +1,8 @@
 
 module datapath_tb;
-	reg R5in, R2in, R4in;
+	reg PCout, MDRout, R2out, R4out;
+	reg MARin, Zin, PCin, MDRin, IRin, Yin;
+	reg R5in, R2in, R4in, ALU_Sel;
 	reg ZLOW_out, ZHI_out;
 	reg clk;
 	
@@ -26,7 +28,7 @@ module datapath_tb;
 			
 		5: //or test
 			
-		6: // shift left test
+		6: //shift left test
 			
 		7: //shift right test
 			
