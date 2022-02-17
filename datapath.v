@@ -171,7 +171,5 @@ input inPort_in
 	assign ZHI_out [31:0] = ALU_out[63:32];
 	assign ZLOW_out [31:0] = ALU_out[31:0];
 	
-	assign BusMuxData_out[31:0] = ZLOW_out[31:0];
-	
 	
 endmodule
