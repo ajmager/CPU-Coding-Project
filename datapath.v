@@ -43,6 +43,35 @@ input inPort_in
 	
 	integer ready = 5'b00000;
 	
+	//32 bit Register setup
+	register_32 R0(clk, clr, r0_in, BUS_data, r0_out);
+	register_32 R1(clk, clr, r1_in, BUS_data, r1_out);
+	register_32 R2(clk, clr, r2_in, BUS_data, r2_out);
+	register_32 R3(clk, clr, r3_in, BUS_data, r3_out);
+	register_32 R4(clk, clr, r4_in, BUS_data, r4_out);
+	register_32 R5(clk, clr, r5_in, BUS_data, r5_out);
+	register_32 R6(clk, clr, r6_in, BUS_data, r6_out);
+	register_32 R7(clk, clr, r7_in, BUS_data, r7_out);
+	register_32 R8(clk, clr, r8_in, BUS_data, r8_out);
+	register_32 R9(clk, clr, r9_in, BUS_data, r9_out);
+	register_32 R10(clk, clr, r10_in, BUS_data, r10_out);
+	register_32 R11(clk, clr, r11_in, BUS_data, r11_out);
+	register_32 R12(clk, clr, r12_in, BUS_data, r12_out);
+	register_32 R13(clk, clr, r13_in, BUS_data, r13_out);
+	register_32 R14(clk, clr, r14_in, BUS_data, r14_out);
+	register_32 R15(clk, clr, r15_in, BUS_data, r15_out);
+	
+	register_32 PC(clk, clr, PC_in, BUS_data, PC_out);
+	register_32 HI(clk, clr, HI_in, BUS_data, HI_out);
+	register_32 LO(clk, clr, LO_in, BUS_data, LO_out);
+	register_32 IR(clk, clr, IR_in, BUS_data, IR_out);
+	register_32 Y(clk, clr, Y_in, BUS_data, Y_out);
+	register_32 ZHI(clk, clr, Z_in, BUS_data, ZHI_out);
+	register_32 ZLOW(clk, clr, Z_in, BUS_data, ZLOW_out);
+	register_32 MAR(clk, clr, MAR_in, BUS_data, MAR_out);
+	register_32 MDR(clk, clr, MDR_in, BUS_data, MDR_out);
+	register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
+	
 	always @ (*) begin
 	
 	if (r0_out) begin
@@ -118,35 +147,6 @@ input inPort_in
 		ready <= 5'b11000;
 	end
 	end
-	//32 bit Register setup
-	register_32 R0(clk, clr, r0_in, BUS_data, r0_out);
-	register_32 R1(clk, clr, r1_in, BUS_data, r1_out);
-	register_32 R2(clk, clr, r2_in, BUS_data, r2_out);
-	register_32 R3(clk, clr, r3_in, BUS_data, r3_out);
-	register_32 R4(clk, clr, r4_in, BUS_data, r4_out);
-	register_32 R5(clk, clr, r5_in, BUS_data, r5_out);
-	register_32 R6(clk, clr, r6_in, BUS_data, r6_out);
-	register_32 R7(clk, clr, r7_in, BUS_data, r7_out);
-	register_32 R8(clk, clr, r8_in, BUS_data, r8_out);
-	register_32 R9(clk, clr, r9_in, BUS_data, r9_out);
-	register_32 R10(clk, clr, r10_in, BUS_data, r10_out);
-	register_32 R11(clk, clr, r11_in, BUS_data, r11_out);
-	register_32 R12(clk, clr, r12_in, BUS_data, r12_out);
-	register_32 R13(clk, clr, r13_in, BUS_data, r13_out);
-	register_32 R14(clk, clr, r14_in, BUS_data, r14_out);
-	register_32 R15(clk, clr, r15_in, BUS_data, r15_out);
-	
-	register_32 PC(clk, clr, PC_in, BUS_data, PC_out);
-	register_32 HI(clk, clr, HI_in, BUS_data, HI_out);
-	register_32 LO(clk, clr, LO_in, BUS_data, LO_out);
-	register_32 IR(clk, clr, IR_in, BUS_data, IR_out);
-	register_32 Y(clk, clr, Y_in, BUS_data, Y_out);
-	register_32 ZHI(clk, clr, Z_in, BUS_data, ZHI_out);
-	register_32 ZLOW(clk, clr, Z_in, BUS_data, ZLOW_out);
-	register_32 MAR(clk, clr, MAR_in, BUS_data, MAR_out);
-	register_32 MDR(clk, clr, MDR_in, BUS_data, MDR_out);
-	register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
-	
 
 	
 	wire[4:0] select;
