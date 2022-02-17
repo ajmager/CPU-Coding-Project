@@ -43,6 +43,8 @@ input inPort_in
 	
 	integer ready = 5'b00000;
 	
+	always @ (*) begin
+	
 	if (r0_out) begin
 		ready <= 5'b00001;
 	end
@@ -115,7 +117,7 @@ input inPort_in
 	if (MDR_out) begin
 		ready <= 5'b11000;
 	end
-	
+	end
 	//32 bit Register setup
 	register_32 R0(clk, clr, r0_in, BUS_data, r0_out);
 	register_32 R1(clk, clr, r1_in, BUS_data, r1_out);
