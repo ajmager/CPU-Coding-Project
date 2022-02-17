@@ -17,7 +17,7 @@ module div(clk,ready,Dividend,Divisor,Q,R);
 	
 	initial bit = 0;
 	
-	always@(posedge clk)
+	always@(Dividend, Divisor)
 		if(ready)
 			begin
 				bit = 32;
