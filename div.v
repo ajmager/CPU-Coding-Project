@@ -1,47 +1,38 @@
-module div(Dividend,Divisor,Z);
+module division(Dividend, Divisor, Z);
 
-	input [31:0] Dividend;
-	input [31:0] Divisor;
+	input [31:0] Dividend,Divisor;
+	output[63:0] Z;
 	
-	output [63:0] Z;
-	//output ready;
-	reg [31:0] Q;
-	reg[31:0] R;
+	reg[31:0] Q, R;
+	reg[63:0] Z = 0;
+	reg[31:0] a,b;
+	reg[31:0] p;
 	
+	integer i = 0; 
 	
-	reg [31:0] Dividend_copy, Divisor_copy, diff;
-	wire[31:0] remainder = Dividend_copy[31:0];
-	
-	reg [31:0] temp;
-	wire ready = !temp;
-	
-	initial temp = 0;
-	
-	always@(Dividend, Divisor)
-		if(ready)
-			begin
-				temp = 32;
-				Q = 0; 
-				Dividend_copy = {32'd0,Dividend};
-				Divisor_copy = {1'b0,Divisor,31'b0};
+	always@(Dividend or Divisor)
+	begin 
+		a = Dividend;
+		b = Divisor;
+		p = 0; 
+		for(i = 0; i < 32; i = i+1)
+		begin	
+			p = {p[30:0],a[31]};
+			a[31:1] = a[30:0]; 
+			p = p-b; 
+			if (p[31] == 1)
+			begin	
+				a[0] = 0;
+				p = p+b;
 			end
-		else
-			begin
-				diff = Dividend_copy - Divisor_copy;
-				Q = Q<<1;
-				
-			if (!diff[31])
-				begin 
-					Dividend_copy = diff;
-					Q[0] = 1'd1;
-				end
-				
-				Divisor_copy = Divisor_copy >> 1;
-				temp = temp - 1;
-				
+			else
+				a[0] = 1; 
+		end
+		Q = a; 
+		R = Dividend - Q; 
+		Z[63:32] = Q;
+		Z[31:0] = R; 
 	end
-	assign Z[31:0] = R[31:0];
-	assign Z[63:32] = Q[31:0];
 endmodule
 				
 	
