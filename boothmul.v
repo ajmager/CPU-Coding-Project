@@ -24,5 +24,6 @@ module boothmul(X, Y, Z_Low, Z_High,en);
 				Z = Z >> 1;
 				Z[63] = Z[62];
 				E1 = X[i];
+			end
 	end
 endmodule
