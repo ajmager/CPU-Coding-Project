@@ -168,4 +168,7 @@ input inPort_in
 	//ALU
 	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out);
 	
+	assign ZLOW_out [31:0] = ALU_out[63:32];
+	assign ZLOW_out [31:0] = ALU_out[31:0];
+	
 endmodule
