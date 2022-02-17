@@ -27,22 +27,21 @@ case(select) begin
 6:			mux_out = BusMuxIn_R6;
 7:			mux_out = BusMuxIn_R7;
 8:			mux_out = BusMuxIn_R8;
-9:			mux_out = BusMuxIn_R7;
-10:		mux_out = BusMuxIn_R8;
-11:		mux_out = BusMuxIn_R10;
-12:		mux_out = BusMuxIn_R11;
-13:		mux_out = BusMuxIn_R12;
-14:		mux_out = BusMuxIn_R13;
-15:		mux_out = BusMuxIn_R14;
-16:		mux_out = BusMuxIn_R15;
-17:		mux_out = BusMuxIn_HI;
-18:		mux_out = BusMuxIn_LO;
-19:		mux_out = BusMuxIn_ZHI;
-20:		mux_out = BusMuxIn_ZLOW;
-21:		mux_out = BusMuxIn_PC;
-22:		mux_out = BusMuxIn_MDR;
-23:		mux_out = BusMuxIn_InPort;
-24:		mux_out = C_sign_extended;
+9:			mux_out = BusMuxIn_R9;
+10:		mux_out = BusMuxIn_R10;
+11:		mux_out = BusMuxIn_R11;
+12:		mux_out = BusMuxIn_R12;
+13:		mux_out = BusMuxIn_R13;
+14:		mux_out = BusMuxIn_R14;
+15:		mux_out = BusMuxIn_R15;
+16:		mux_out = BusMuxIn_HI;
+17:		mux_out = BusMuxIn_LO;
+18:		mux_out = BusMuxIn_ZHI;
+29:		mux_out = BusMuxIn_ZLOW;
+20:		mux_out = BusMuxIn_PC;
+21:		mux_out = BusMuxIn_MDR;
+22:		mux_out = BusMuxIn_InPort;
+23:		mux_out = C_sign_extended;
 default:	mux_out = 32'bx;
 endcase
 end
