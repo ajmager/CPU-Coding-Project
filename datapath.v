@@ -157,10 +157,10 @@ input inPort_in);
 	//Bus
 	BusMux bus(BusMuxData_out, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select);
 	
-	wire [31:0] ALU_out
-	wire 			carry_out
+	wire [31:0] ALU_out;
+	wire 			carry_out;
 	
 	//ALU SETUP
-	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out, carry_out);
+	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out, ZHI_out, ZLOW_out, carry_out);
 	
 endmodule

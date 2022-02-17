@@ -1,49 +1,49 @@
 module alu(
-           input [31:0] A,B,  // ALU 8-bit Inputs                 
-           input [3:0] ALU_Sel,// ALU Selection
-           output [31:0] ALU_Out, // ALU 8-bit Output
-           output [31:0] Z_High, Z_Low;
-           output CarryOut // Carry Out Flag
+           input [31:0] A,B,  // ALU 31-bit Inputs                 
+           input [4:0] ALU_Sel,// ALU Selection
+           output [63:0] ALU_Out, // ALU 64-bit Output
     );
-    reg [31:0] ALU_Result;
-    wire [32:0] tmp;
+    reg [63:0] ALU_Result;
     assign ALU_Out = ALU_Result; // ALU out
-    assign tmp = A + B;
-    assign CarryOut = tmp[32]; // Carryout flag
+	 reg [31:0] zeros = 32'h00000000;
+	 
+	 reg [63:0] tempOut;
+	 
+	 boothmul multiplication(A, B, tempOut);
+	 div division(A, B, tempOut);
     always @(*)
     begin
         case(ALU_Sel) begin
-        4'b0000: // Addition
-           ALU_Result = A + B; 
-        4'b0001: // Subtraction
-           ALU_Result = A - B ;
-        4'b0010: // Multiplication  NEEDS TO BE CHANGED
-           boothmul multiplication(A, B, Z_Low, Z_High); 
-        4'b0011: // Division - NEEDS TO BE CHANGED
-           div division(clk, ready, A, B, Z_High, Z_Low); //Z_High is Q, Z_Low is R
-        4'b0100: // AND
-           ALU_Result = A & B;
-        4'b0101: // OR
-           ALU_Result = A | B;
-        4'b0110: // shift left
-           ALU_Result = B<<1 ;
-        4'b0111: // shift right
-           ALU_Result = B>>1; 
-        4'b1000: // rotate left
-           ALU_Result = {B[30:0,B[31]};
-        4'b1001: // rotate right
-           ALU_Result = {B[0],B[31:1]};
-        4'b1010: // negate
-           ALU_Result = ~B; 
-        4'b1011: // XOR   
-           ALU_Result = A ^ B; 
-        4'b1100: // NOR
-           ALU_Result = ~(A | B);
-        4'b1101: //NAND
-           ALU_Result = ~(A & B);
+        0 : // Addition
+           ALU_Result <= {zeros[31:0], A + B};
+        1 : // Subtraction
+           ALU_Result <= {zeros[31:0], A - B};
+        2 : // Multiplication
+			  ALU_Result <= tempOut;
+        4 : // Division
+			  ALU_Result <= tempOut;
+        5 : // AND
+           ALU_Result <= {zeros[31:0], A & B};
+        6 : // OR
+           ALU_Result <= {zeros[31:0], A | B};
+        7 : // shift left
+           ALU_Result <= {zeros[31:0], B<<1};
+        8 : // shift right
+           ALU_Result <= {zeros[31:0], B>>1}; 
+        9 : // rotate left
+           ALU_Result <= {zeros[31:0], {B[30:0,B[31]}};
+        10: // rotate right
+           ALU_Result <= {zeros[31:0], {B[0],B[31:1]}};
+        11 : // negate
+           ALU_Result <= {zeros[31:0],~B}; 
+        12 : // XOR   
+           ALU_Result <= {zeros[31:0], A ^ B}; 
+        13 : // NOR
+           ALU_Result <= {zeros[31:0], ~(A | B)};
+        14 : //NAND
+           ALU_Result <= {zeros[31:0], ~(A & B)};
                            
-          default: ALU_Result = A + B ; 
+          default: ALU_Result = 64'bx ; 
         endcase
     end
-
 endmodule
