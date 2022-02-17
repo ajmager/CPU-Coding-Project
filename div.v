@@ -1,12 +1,12 @@
-module div(clk,ready,Dividend,Divisor,Q,R);
+module div(Dividend,Divisor,Z);
 
-	input clk;
 	input [31:0] Dividend;
 	input [31:0] Divisor;
 	
-	output[31:0] Q;
-	output[31:0] R;
-	output ready;
+	output [63:0] Z;
+	//output ready;
+	reg [31:0] Q;
+	reg[31:0] R;
 	
 	reg [31:0] Q;
 	reg [31:0] Dividend_copy, Divisor_copy, diff;
@@ -40,7 +40,8 @@ module div(clk,ready,Dividend,Divisor,Q,R);
 				bit = bit - 1;
 				
 	end
-	
+	Z[31:0] = R[31:0];
+	Z[63:32] = Q[31:0];
 endmodule
 				
 	
