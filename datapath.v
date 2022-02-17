@@ -154,7 +154,7 @@ input inPort_in
 	//Encoder - select signals S0 - S4
 	encoder_32_5 encoder(select, ready);
 	
-	wire [31:0] BusMuxData_out;
+	output [31:0] BusMuxData_out;
 	
 	//assign C_sign_extended = {14{IR_out[17]}, IR_out [17:0]};
 	wire [31:0] C_sign_extended  = 32'h00000000;
@@ -168,7 +168,10 @@ input inPort_in
 	//ALU
 	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out);
 	
-	assign ZLOW_out [31:0] = ALU_out[63:32];
+	assign ZHI_out [31:0] = ALU_out[63:32];
 	assign ZLOW_out [31:0] = ALU_out[31:0];
+	
+	assign BusMuxData_out[31:0] = ZLOW_out[31:0];
+	
 	
 endmodule
