@@ -8,9 +8,39 @@ module datapath_tb;
 		clk <= 1'b1; forever #5 clk <= ~clk;
 	end 
 	
+	integer test = 0; 
+	
 	initial begin 
-		//T0 - assert control signals, etc
-		#10 $display("...") // T1 assert control signals etc
-		//..
+		case(test)
+		0: //Add test
+			//T0 - assert control signals, etc
+			#10 $display("...") // T1 assert control signals etc
+			//..
+		1: //sub test
+			
+		2: //mul test
+		
+		3: //div test
+			
+		4: //and test
+			
+		5: //or test
+			
+		6: // shift left test
+			
+		7: //shift right test
+			
+		8: //rotate left test
+			
+		9: //rotate right test
+			
+		10: // not test
+		
+		11: //Xor test
+			
+		12: //nor test
+			
+		13: //nand test
+				
 	end
 endmodule 
