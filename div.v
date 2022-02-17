@@ -8,7 +8,7 @@ module div(Dividend,Divisor,Z);
 	reg [31:0] Q;
 	reg[31:0] R;
 	
-	reg [31:0] Q;
+	
 	reg [31:0] Dividend_copy, Divisor_copy, diff;
 	wire[31:0] remainder = Dividend_copy[31:0];
 	
@@ -40,8 +40,8 @@ module div(Dividend,Divisor,Z);
 				bit = bit - 1;
 				
 	end
-	Z[31:0] = R[31:0];
-	Z[63:32] = Q[31:0];
+	assign Z[31:0] = R[31:0];
+	assign Z[63:32] = Q[31:0];
 endmodule
 				
 	
