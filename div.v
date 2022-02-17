@@ -23,7 +23,7 @@ module div(clk,ready,Dividend,Divisor,Q,R);
 				bit = 32;
 				Q = 0; 
 				Dividend_copy = {32'd0,Dividend};
-				Divisor_copy = {1'b0,Divisor,31'bd0};
+				Divisor_copy = {1'b0,Divisor,31'b0};
 			end
 		else
 			begin
