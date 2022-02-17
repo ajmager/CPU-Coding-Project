@@ -8,7 +8,7 @@ module division(Dividend, Divisor, Z);
 	reg[31:0] a,b;
 	reg[31:0] p;
 	
-	integet i = 0; 
+	integer i = 0; 
 	
 	always@(Dividend or Divisor)
 	begin 
