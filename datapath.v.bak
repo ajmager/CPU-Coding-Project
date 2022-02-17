@@ -160,7 +160,7 @@ input inPort_in);
 	wire [31:0] ALU_out;
 	wire 			carry_out;
 	
-	//ALU
+	//ALU SETUP
 	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out, ZHI_out, ZLOW_out, carry_out);
 	
 endmodule
