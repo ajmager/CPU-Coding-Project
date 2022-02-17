@@ -3,7 +3,7 @@
 module encoder_32_5(output reg [4:0] Code, input [31:0] Data);
 
 always @(Data) begin
-case (Data)
+case (Data) begin
 32'h01			:	Code = 5'd0;
 32'h02			:	Code = 1;
 32'h04			:	Code = 2;

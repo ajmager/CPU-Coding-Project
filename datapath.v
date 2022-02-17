@@ -3,7 +3,8 @@ module datapath (
 input clk, clr, reset, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, 
 input PC_in, IR_in, Y_in, Z_in,
 input MAR_in, MDR_in, 
-input inPort_in);
+input inPort_in,
+);
 
 	//data out wires
 	
@@ -152,15 +153,15 @@ input inPort_in);
 	
 	wire [31:0] BusMuxData_out;
 	
-	assign C_sign_extended ={14{IR_out[17]}, IR_out [17:0]};
+	assign C_sign_extended = {14{IR_out[17]}, IR_out [17:0]};
 	
 	//Bus
 	BusMux bus(BusMuxData_out, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select);
 	
-	wire [31:0] ALU_out;
-	wire 			carry_out;
+	wire [63:0] ALU_out;
+	wire [4:0] ALU_select;
 	
 	//ALU
-	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out, ZHI_out, ZLOW_out, carry_out);
+	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out);
 	
 endmodule

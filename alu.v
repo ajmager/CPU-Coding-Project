@@ -14,7 +14,7 @@ module alu(
 	 
     always @(*)
     begin
-        case(ALU_Sel) begin
+        case(ALU_Sel)
         0 : // Addition
            ALU_Result <= {zeros[31:0], A + B};
         1 : // Subtraction
