@@ -6,21 +6,21 @@ module alu(
            output CarryOut // Carry Out Flag
     );
     reg [31:0] ALU_Result;
-    wire [63:0] tmp;
+    wire [32:0] tmp;
     assign ALU_Out = ALU_Result; // ALU out
-    assign tmp = {1'b0,A} + {1'b0,B};
-    assign CarryOut = tmp[8]; // Carryout flag
+    assign tmp = A + B;
+    assign CarryOut = tmp[32]; // Carryout flag
     always @(*)
     begin
-        case(ALU_Sel)
+        case(ALU_Sel) begin
         4'b0000: // Addition
-           ALU_Result = A + B ; 
+           ALU_Result = A + B; 
         4'b0001: // Subtraction
            ALU_Result = A - B ;
         4'b0010: // Multiplication  NEEDS TO BE CHANGED
-           boothmul INSTANTIATION(A, B, Z_Low, Z_High); 
+           boothmul multiplication(A, B, Z_Low, Z_High); 
         4'b0011: // Division - NEEDS TO BE CHANGED
-           div INSTANTIATION(clk, ready, A, B, Z_High, Z_Low); //Z_High is Q, Z_Low is R
+           div division(clk, ready, A, B, Z_High, Z_Low); //Z_High is Q, Z_Low is R
         4'b0100: // AND
            ALU_Result = A & B;
         4'b0101: // OR
