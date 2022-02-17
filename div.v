@@ -12,15 +12,15 @@ module div(Dividend,Divisor,Z);
 	reg [31:0] Dividend_copy, Divisor_copy, diff;
 	wire[31:0] remainder = Dividend_copy[31:0];
 	
-	reg [31:0] bit;
-	wire ready = !bit;
+	reg [31:0] temp;
+	wire ready = !temp;
 	
-	initial bit = 0;
+	initial temp = 0;
 	
 	always@(Dividend, Divisor)
 		if(ready)
 			begin
-				bit = 32;
+				temp = 32;
 				Q = 0; 
 				Dividend_copy = {32'd0,Dividend};
 				Divisor_copy = {1'b0,Divisor,31'b0};
@@ -37,7 +37,7 @@ module div(Dividend,Divisor,Z);
 				end
 				
 				Divisor_copy = Divisor_copy >> 1;
-				bit = bit - 1;
+				temp = temp - 1;
 				
 	end
 	assign Z[31:0] = R[31:0];
