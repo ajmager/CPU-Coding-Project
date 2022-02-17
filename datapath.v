@@ -4,7 +4,7 @@ input clk, clr, reset, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r
 input PC_in, IR_in, Y_in, Z_in,
 input MAR_in, MDR_in, 
 input inPort_in
-//input [4:0] ALU_select
+input [4:0] ALU_select
 );
 
 	//data out wires
@@ -163,7 +163,6 @@ input inPort_in
 	BusMux bus(BusMuxData_out, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select);
 	
 	wire [63:0] ALU_out;
-	wire [4:0] ALU_select;
 	
 	//ALU
 	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out);
