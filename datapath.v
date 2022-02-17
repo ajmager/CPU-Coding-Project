@@ -143,19 +143,24 @@ input inPort_in);
 	register_32 MDR(clk, clr, MDR_in, BUS_data, MDR_out);
 	register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
 	
-	//ALU SETUP
-	alu ALU();
+
 	
 	wire[4:0] select;
 	
 	//Encoder - select signals S0 - S4
 	encoder_32_5 encoder(select, ready);
 	
-	wire [31:0] data_out;
+	wire [31:0] BusMuxData_out;
 	
 	assign C_sign_extended ={14{IR_out[17]}, IR_out [17:0]};
 	
 	//Bus
-	BusMux bus(data_out, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select);
+	BusMux bus(BusMuxData_out, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select);
+	
+	wire [31:0] ALU_out
+	wire 			carry_out
+	
+	//ALU SETUP
+	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out, carry_out);
 	
 endmodule
