@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps
+
 
 module datapath_tb;
 	reg PCout, MDRout, R2out, R4out;
