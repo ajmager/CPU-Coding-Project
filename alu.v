@@ -1,7 +1,7 @@
 module alu(
            input [31:0] A,B,  // ALU 31-bit Inputs
            input [4:0] ALU_Sel,// ALU Selection
-           output [63:0] ALU_Out, // ALU 64-bit Output
+           output [63:0] ALU_Out // ALU 64-bit Output
     );
     reg [63:0] ALU_Result;
     assign ALU_Out = ALU_Result; // ALU out
@@ -32,7 +32,7 @@ module alu(
         8 : // shift right
            ALU_Result <= {zeros[31:0], B>>1}; 
         9 : // rotate left
-           ALU_Result <= {zeros[31:0], {B[30:0,B[31]}};
+           ALU_Result <= {zeros[31:0], {B[30:0],B[31]}};
         10: // rotate right
            ALU_Result <= {zeros[31:0], {B[0],B[31:1]}};
         11 : // negate

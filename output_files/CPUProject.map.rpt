@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Thu Feb 17 01:13:14 2022
+Thu Feb 17 11:50:02 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Feb 17 01:13:14 2022                ;
+; Analysis & Synthesis Status        ; Failed - Thu Feb 17 11:50:02 2022                ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; CPUProject                                       ;
@@ -164,12 +164,11 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Feb 17 01:13:10 2022
+    Info: Processing started: Thu Feb 17 11:50:00 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Error (10170): Verilog HDL syntax error at register_32.v(8) near text ")";  expecting a direction File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 8
-Error (10112): Ignored design unit "register_32" at register_32.v(3) due to previous errors File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 3
-Info (12021): Found 0 design units, including 0 entities, in source file register_32.v
+Info (12021): Found 1 design units, including 1 entities, in source file register_32.v
+    Info (12023): Found entity 1: register_32
 Info (12021): Found 1 design units, including 1 entities, in source file encoder.v
     Info (12023): Found entity 1: encoder_32_5
 Warning (10463): Verilog HDL Declaration warning at div.v(15): "bit" is SystemVerilog-2005 keyword
@@ -179,30 +178,24 @@ Info (12021): Found 0 design units, including 0 entities, in source file div.v
 Error (10170): Verilog HDL syntax error at datapath_tb.v(2) near text ' File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v Line: 2
 Error (10170): Verilog HDL syntax error at datapath_tb.v(2) near text "'";  expecting a description File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v Line: 2
 Info (12021): Found 0 design units, including 0 entities, in source file datapath_tb.v
-Error (10170): Verilog HDL syntax error at datapath.v(7) near text ")";  expecting a direction File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 7
 Error (10170): Verilog HDL syntax error at datapath.v(45) near text "if";  expecting "endmodule" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 45
-Error (10170): Verilog HDL syntax error at datapath.v(156) near text ",";  expecting "}" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 156
-Error (10170): Verilog HDL syntax error at datapath.v(156) near text ";";  expecting "}" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 156
-Error (10170): Verilog HDL syntax error at datapath.v(159) near text ")";  expecting "}" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 159
-Error (10170): Verilog HDL syntax error at datapath.v(165) near text ")";  expecting "}" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 165
+Error (10112): Ignored design unit "datapath" at datapath.v(2) due to previous errors File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 2
 Info (12021): Found 0 design units, including 0 entities, in source file datapath.v
-Error (10170): Verilog HDL syntax error at busmux.v(20) near text "begin";  expecting an operand File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux.v Line: 20
-Error (10112): Ignored design unit "BusMux" at busmux.v(3) due to previous errors File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux.v Line: 3
-Info (12021): Found 0 design units, including 0 entities, in source file busmux.v
+Warning (12090): Entity "BusMux" obtained from "busmux.v" instead of from Quartus II megafunction library
+Info (12021): Found 1 design units, including 1 entities, in source file busmux.v
+    Info (12023): Found entity 1: BusMux
 Error (10170): Verilog HDL syntax error at boothmul.v(28) near text "endmodule";  expecting "end" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v Line: 28
 Info (12021): Found 0 design units, including 0 entities, in source file boothmul.v
 Error (10170): Verilog HDL syntax error at alu_tb.v(2) near text ' File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu_tb.v Line: 2
 Error (10170): Verilog HDL syntax error at alu_tb.v(2) near text "'";  expecting a description File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu_tb.v Line: 2
 Info (12021): Found 0 design units, including 0 entities, in source file alu_tb.v
-Error (10170): Verilog HDL syntax error at alu.v(5) near text ")";  expecting a direction File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (10170): Verilog HDL syntax error at alu.v(35) near text ",";  expecting "]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 35
-Error (10112): Ignored design unit "alu" at alu.v(1) due to previous errors File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file alu.v
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 20 errors, 1 warning
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 9 errors, 2 warnings
     Error: Peak virtual memory: 349 megabytes
-    Error: Processing ended: Thu Feb 17 01:13:14 2022
-    Error: Elapsed time: 00:00:04
+    Error: Processing ended: Thu Feb 17 11:50:02 2022
+    Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:02
 
 
