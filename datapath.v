@@ -4,6 +4,7 @@ input clk, clr, reset, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r
 input PC_in, IR_in, Y_in, Z_in,
 input MAR_in, MDR_in, 
 input inPort_in
+//input [4:0] ALU_select
 );
 
 	//data out wires
