@@ -4,6 +4,7 @@ module datapath_tb;
 	reg PCout,Zlowout, MDRout, R2out, R4out;	//add any other signals to see in your simulation
 	reg MARin, Zin, PCin, MDRin, IRin, Yin;
 	reg IncPC, READ, AND, R5in, R2in, R4in;
+	reg ZLOW_out;
 	reg Clock;
 	reg [31:0] Mdatain;
 	
@@ -11,8 +12,8 @@ module datapath_tb;
 	
 	reg[3:0] Present_state = Default;
 	
-Datapath DUT(PCout, Zlowout, MDRout, R2out, R4out, MARin, Zin, PCin, MDRin, Yin, IncPC, Read, AND, R5in, R2in, R4in, Clock, Mdatain);
-
+	//Datapath DUT(PCout, ZLOW_out, MDRout, R2out, R4out, MARin, Zin, PCin, MDRin, Yin, IncPC, Read, AND, R5in, R2in, R4in, Clock, Mdatain);
+	datapath DUT(PCout, ZLOW_out, MDRout, R2out, R4out, MARin, Zin, PCin, MDRin, Yin, IncPC, Read, ALU_Select, R5in, R2in, R4in, Clock, Mdatain);
 //add test logic here
 initial
 	begin
@@ -30,11 +31,11 @@ always @(posedge Clock)	//finite state machine; if clock rising-edge
 			Reg_load2b		:		Present_state = Reg_load3a;
 			Reg_load3a		:		Present_state = Reg_load3b;
 			Reg_load3b		:		Present_state = T0;
-			T0					:		Present_state = T1;
-			T1					:		Present_state = T2;
-			T2					:		Present_state = T3;
-			T3					:		Present_state = T4;
-			T4					:		Present_state = T5;
+			T0			:		Present_state = T1;
+			T1			:		Present_state = T2;
+			T2			:		Present_state = T3;
+			T3			:		Present_state = T4;
+			T4			:		Present_state = T5;
 		endcase
 	end
 always@(Present_state)	//do the required job in each state
@@ -44,9 +45,9 @@ begin
 		Default: begin
 							PCout <=0;	Zlowout<=0;	MDRout<=0;	//initialize the signals
 							R2out<=0;	R4out<=0;	MARin<=0;	Zin<=0;
-							PCin<=0;		MDRin<=0;	IRin<=0;		Yin<=0;
-							IncPC<=0;	Read<=0;		AND<=0;
-							R5<=0;		R2in<=0;		R4in<=0;		Mdatain<=32’h00000000;
+							PCin<=0;	MDRin<=0;	IRin<=0;	Yin<=0;
+							IncPC<=0;	Read<=0;	AND<=0;
+							R5<=0;		R2in<=0;	R4in<=0;	Mdatain<=32’h00000000;
 		end
 		Reg_load1a: begin	
 							Mdatain <=32’h00000022;		
@@ -78,11 +79,11 @@ begin
 							#15 MDRout<=0; R5in<=0;		//initialize R5 with the value $26
 		end
 		
-		T0: begin											//see if you need to de-assert these signals
+		T0: begin								//see if you need to de-assert these signals
 							PCout<=1;	MARin<=1;	IncPC<=1;	Zin<=1;
 		end
-		T2: begin
-							Zlowout<=1;	PCin<=1;		Read<=1;		MDRin<=1;
+		T1: begin
+							Zlowout<=1;	PCin<=1;	Read<=1;	MDRin<=1;
 							Mdatain<= 32’h4A920000;		//opcode for "and R5, R2, R4"
 		end
 		T2: begin
@@ -95,7 +96,7 @@ begin
 							R4out<=1;	AND<=1;	Zin<=1;
 		end
 		T5: begin
-							Zlowout<=1;	R5in<=1;
+							ZLOW_out<=1;	R5in<=1;
 		end
 	endcase
 end
