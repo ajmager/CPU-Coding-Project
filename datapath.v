@@ -4,7 +4,8 @@ input clk, clr, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r
 input PC_in, IR_in, Y_in, Z_in,
 input MAR_in, MDR_in, 
 input inPort_in,
-input [4:0] ALU_select
+input [4:0] ALU_select,
+input [31:0] MdataIn
 );
 
 	//data out wires
@@ -41,6 +42,8 @@ input [4:0] ALU_select
 	wire [31:0] Cout;
 	
 	wire [31:0] BUS_data;
+	
+	assign BUS_data [31:0] = MdataIn [31:0];
 	
 	integer ready = 5'b00000;
 	

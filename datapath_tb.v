@@ -23,7 +23,8 @@ module datapath_tb;
 		PCin, IRin, Yin, Zin,
 		MARin, MDRin,
 		inPortin,
-		ALU_select
+		ALU_select,
+		Mdatain
 	);
 //add test logic here
 initial
