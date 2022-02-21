@@ -1,30 +1,30 @@
 //and datapath_tb.v file <file name>
-'timescale 1ns/10ps
+`timescale 1ns/10ps
 module datapath_tb;
 	reg PCout,Zlowout, MDRout, R2out, R4out;	//add any other signals to see in your simulation
 	
 	reg R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
-	reg PCin, IRin, Yin, Zin,
-	reg MARin, MDRin,
-	reg IncPC, Read;
+	reg PCin, IRin, Yin, Zin;
+	reg MARin, MDRin;
 	reg [4:0] ALU_select;
 	reg ZLOW_out;
 	reg Clock, clr;
 	reg [31:0] Mdatain;
 	
-	parameter Default = 4’b0000, Reg_load1a = 4’b0001, Reg_load1b = 4’b0010, Reg_load2a = 4’b0011, Reg_load2b = 4’b0100, Reg_load3a = 4’b0101, Reg_load3b = 4’b0110, T0 = 4’b0111, T1 = 4’b1000, T2 = 4’b1001, T3 = 4’b1010, T4 = 4’b1011, T5 = 4’b1100;
+	parameter Default = 4'b0000, Reg_load1a = 4'b0001, Reg_load1b = 4'b0010, Reg_load2a = 4'b0011, Reg_load2b = 4'b0100, Reg_load3a = 4'b0101, Reg_load3b = 4'b0110, T0 = 4'b0111, T1 = 4'b1000, T2 = 4'b1001, T3 = 4'b1010, T4 = 4'b1011, T5 = 4'b1100;
 	
 	reg[3:0] Present_state = Default;
 	
-	//Datapath DUT(PCout, ZLOW_out, MDRout, R2out, R4out, MARin, Zin, PCin, MDRin, Yin, IncPC, Read, AND, R5in, R2in, R4in, Clock, Mdatain);
+	
 	datapath DUT(
-		Clock, clr, 
+		Clock, clr,
 		R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in,
 		PCin, IRin, Yin, Zin,
 		MARin, MDRin,
 		inPortin,
 		ALU_select,
-		Mdatain
+		Mdatain,
+		
 	);
 //add test logic here
 initial
@@ -58,29 +58,29 @@ begin
 							PCout <=0;	Zlowout<=0;	MDRout<=0;	//initialize the signals
 							R2out<=0;	R4out<=0;	MARin<=0;	Zin<=0;
 							PCin<=0;		MDRin<=0;	IRin<=0;	Yin<=0;
-							IncPC<=0;	Read<=0;	AND<=0;
-							R5in<=0;		R2in<=0;	R4in<=0;	Mdatain<=32’h00000000;
+							ALU_select<=0;
+							R5in<=0;		R2in<=0;	R4in<=0;	Mdatain<=32'h00000000;
 							R0in<=0;		R1in<=0;	R3in<=0;
-							R6<=0;		R7in<=0;	R8in<=0;
-							R9<=0;		R10in<=0;	R11in<=0;
-							R12<=0;		R13in<=0;	R14in<=0;
-							R15<=0;		inPortin <= 0;	clr <= 0;
+							R6in<=0;		R7in<=0;	R8in<=0;
+							R9in<=0;		R10in<=0;	R11in<=0;
+							R12in<=0;	R13in<=0;	R14in<=0;
+							R15in<=0;	inPortin <= 0;	clr <= 0;
 							
 		end
 		Reg_load1a: begin	
-							Mdatain <=32’h00000022;		
-							Read = 0;	MDRin = 0;		//the first zero is there for completeness
-							#10 Read<=1;	MDRin<=1;
-							#15 Read<=0;	MDRin<=0;
+							Mdatain <=32'h00000022;		
+							MDRin = 0;		//the first zero is there for completeness
+							#10 MDRin<=1;
+							#15 MDRin<=0;
 		end
 		Reg_load1b: begin
 							#10 MDRout<=1;	R2in<=1;
 							#15 MDRout<=0;	R2in<=0;		//initialize R2 with the value $22
 		end
 		Reg_load2a: begin
-							Mdatain<= 32’h00000024;
-							#10 Read<=1;	MDRin<=1;
-							#15 Read<=0;	MDRin<=0;
+							Mdatain<= 32'h00000024;
+							#10 MDRin<=1;
+							#15 MDRin<=0;
 		end
 		Reg_load2b: begin
 							#10 MDRout<=1; R4in<=1;
@@ -88,9 +88,9 @@ begin
 							
 		end
 		Reg_load3a: begin 
-							Mdatain<=32’h00000026;
-							#10 Read<=1;	MDRin<=1;
-							#15 Read<=0;	MDRin<=0;
+							Mdatain<=32'h00000026;
+							#10 MDRin<=1;
+							#15 MDRin<=0;
 		end
 		Reg_load3b:	begin
 							#10 MDRout<=1;	R5in<=1;
@@ -98,11 +98,11 @@ begin
 		end
 		
 		T0: begin								//see if you need to de-assert these signals
-							PCout<=1;	MARin<=1;	IncPC<=1;	Zin<=1;
+							PCout<=1;	MARin<=1;	Zin<=1;
 		end
 		T1: begin
-							Zlowout<=1;	PCin<=1;	Read<=1;	MDRin<=1;
-							Mdatain<= 32’h4A920000;		//opcode for "and R5, R2, R4"
+							Zlowout<=1;	PCin<=1;	MDRin<=1;
+							Mdatain<= 32'h4A920000;		//opcode for "and R5, R2, R4"
 		end
 		T2: begin
 							MDRout<=1;	IRin<=1;

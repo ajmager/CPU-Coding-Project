@@ -6,6 +6,7 @@ input MAR_in, MDR_in,
 input inPort_in,
 input [4:0] ALU_select,
 input [31:0] MdataIn
+output[31:0] BusMuxData_out;
 );
 
 	//data out wires
@@ -147,7 +148,7 @@ always @ (*) begin
 	if (MDR_out) begin
 		ready <= 5'b11000;
 	end
-	if	(InPort_out) begin
+	if	(inPort_out) begin
 		ready <= 5'b11001;
 	end
 	if	(Cout) begin
@@ -160,8 +161,6 @@ end
 	
 	//Encoder - select signals S0 - S4
 	encoder_32_5 encoder(select, ready);
-	
-	output [31:0] BusMuxData_out;
 	
 	//assign C_sign_extended = {14{IR_out[17]}, IR_out [17:0]};
 	wire [31:0] C_sign_extended  = 32'h00000000;
