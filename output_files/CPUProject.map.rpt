@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Mon Feb 21 15:34:46 2022
+Mon Feb 21 15:37:22 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Feb 21 15:34:46 2022                ;
+; Analysis & Synthesis Status        ; Failed - Mon Feb 21 15:37:22 2022                ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; CPUProject                                       ;
@@ -164,7 +164,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Feb 21 15:34:43 2022
+    Info: Processing started: Mon Feb 21 15:37:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Warning (10275): Verilog HDL Module Instantiation warning at datapath_tb.v(28): ignored dangling comma in List of Port Connections
@@ -178,19 +178,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file registe
     Info (12023): Found entity 1: register_32
 Info (12021): Found 1 design units, including 1 entities, in source file encoder.v
     Info (12023): Found entity 1: encoder_32_5
-Error (10170): Verilog HDL syntax error at datapath.v(9) near text "output";  expecting ")" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 9
-Error (10112): Ignored design unit "datapath" at datapath.v(2) due to previous errors File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 2
-Info (12021): Found 0 design units, including 0 entities, in source file datapath.v
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
+    Info (12023): Found entity 1: datapath
 Info (12021): Found 1 design units, including 1 entities, in source file boothmul.v
     Info (12023): Found entity 1: boothmul
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu
+Warning (10236): Verilog HDL Implicit Net warning at datapath_tb.v(24): created implicit net for "inPortin"
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(70): created implicit net for "HI_in"
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(71): created implicit net for "LO_in"
+Error (10137): Verilog HDL Procedural Assignment error at datapath_tb.v(67): object "inPortin" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v Line: 67
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 1 error, 4 warnings
     Error: Peak virtual memory: 349 megabytes
-    Error: Processing ended: Mon Feb 21 15:34:46 2022
+    Error: Processing ended: Mon Feb 21 15:37:22 2022
     Error: Elapsed time: 00:00:03
-    Error: Total CPU time (on all processors): 00:00:02
+    Error: Total CPU time (on all processors): 00:00:01
 
 
 +------------------------------------------+

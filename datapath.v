@@ -5,8 +5,8 @@ input PC_in, IR_in, Y_in, Z_in,
 input MAR_in, MDR_in, 
 input inPort_in,
 input [4:0] ALU_select,
-input [31:0] MdataIn
-output[31:0] BusMuxData_out;
+input [31:0] MdataIn,
+output[31:0] BusMuxData_out
 );
 
 	//data out wires
