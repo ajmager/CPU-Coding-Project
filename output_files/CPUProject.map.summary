@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Mon Feb 21 15:54:47 2022
+Analysis & Synthesis Status : Failed - Mon Feb 21 16:05:46 2022
 Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : CPUProject
-Top-level Entity Name : CPUProject
+Top-level Entity Name : datapath
 Family : Cyclone III
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge
