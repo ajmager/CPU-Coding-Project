@@ -1,13 +1,12 @@
-module boothmul(X, Y, Z,en);
+module boothmul(X, Y, Z);
 	input signed [31:0] X, Y;
-	input en;
 	output signed [63:0] Z;
 	reg signed [63:0] Z;
 	reg [1:0] temp;
 	integer i;
 	reg E1;
 	reg [31:0] Y1;
-	always @ (X, Y,en)
+	always @ (X, Y)
 	begin
 		Z = 64'd0;
 		E1 = 1'd0;
