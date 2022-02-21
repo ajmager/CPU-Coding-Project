@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Mon Feb 21 16:15:02 2022
+Mon Feb 21 17:02:59 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Feb 21 16:15:02 2022                ;
+; Analysis & Synthesis Status        ; Failed - Mon Feb 21 17:02:59 2022                ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
@@ -164,7 +164,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Feb 21 16:14:59 2022
+    Info: Processing started: Mon Feb 21 17:02:56 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
@@ -197,8 +197,8 @@ Error (12152): Can't elaborate user hierarchy "alu:ALU" File: C:/Users/prana/One
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
 Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 2 errors, 3 warnings
     Error: Peak virtual memory: 350 megabytes
-    Error: Processing ended: Mon Feb 21 16:15:02 2022
-    Error: Elapsed time: 00:00:03
+    Error: Processing ended: Mon Feb 21 17:03:00 2022
+    Error: Elapsed time: 00:00:04
     Error: Total CPU time (on all processors): 00:00:02
 
 
