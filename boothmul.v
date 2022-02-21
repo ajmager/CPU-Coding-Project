@@ -13,16 +13,16 @@ module boothmul(X, Y, Z);
 		Y1 = ~Y;
 		Z[63:0]=X;
 		for (i = 0; i < 32; i = i + 1)
-			begin
-				temp = {X[i], E1};
-				case (temp)
-					2'd2 : Z [63 : 32] = Z [63 : 32] + Y1;
-					2'd1 : Z [63 : 32] = Z [63 : 32] + Y;
-					default : begin end
-				endcase
-				Z = Z >> 1;
-				Z[63] = Z[62];
-				E1 = X[i];
-			end
+		begin
+			temp = {X[i], E1};
+			case (temp)
+				2'd2 : Z [63 : 32] = Z [63 : 32] + Y1;
+				2'd1 : Z [63 : 32] = Z [63 : 32] + Y;
+				default : begin end
+			endcase
+			Z = Z >> 1;
+			Z[63] = Z[62];
+			E1 = X[i];
+		end
 	end
 endmodule
