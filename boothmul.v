@@ -1,7 +1,7 @@
 module boothmul(X, Y, Z);
 	input signed [31:0] X, Y;
 	output signed [63:0] Z;
-	reg signed [63:0] Z;
+	wire [63:0] Z;
 	reg [1:0] temp;
 	integer i;
 	reg E1;
