@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Mon Feb 21 15:37:22 2022
+Mon Feb 21 15:45:35 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Feb 21 15:37:22 2022                ;
+; Analysis & Synthesis Status        ; Failed - Mon Feb 21 15:45:35 2022                ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; CPUProject                                       ;
@@ -164,10 +164,9 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Feb 21 15:37:19 2022
+    Info: Processing started: Mon Feb 21 15:45:32 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Warning (10275): Verilog HDL Module Instantiation warning at datapath_tb.v(28): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
     Info (12023): Found entity 1: datapath_tb
 Info (12021): Found 1 design units, including 1 entities, in source file div.v
@@ -184,14 +183,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file boothmu
     Info (12023): Found entity 1: boothmul
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu
-Warning (10236): Verilog HDL Implicit Net warning at datapath_tb.v(24): created implicit net for "inPortin"
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(70): created implicit net for "HI_in"
-Warning (10236): Verilog HDL Implicit Net warning at datapath.v(71): created implicit net for "LO_in"
-Error (10137): Verilog HDL Procedural Assignment error at datapath_tb.v(67): object "inPortin" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v Line: 67
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(21): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 21
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(22): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 22
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(23): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 23
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(24): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 24
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(25): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 25
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(26): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 26
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(27): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 27
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(28): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 28
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(29): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 29
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(30): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 30
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(31): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 31
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(32): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 32
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(33): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 33
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(34): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 34
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(35): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 35
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(36): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 36
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(37): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 37
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(38): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 38
+Error (10137): Verilog HDL Procedural Assignment error at busmux_32_1.v(39): object "mux_out" on left-hand side of assignment must have a variable data type File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v Line: 39
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 1 error, 4 warnings
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 19 errors, 0 warnings
     Error: Peak virtual memory: 349 megabytes
-    Error: Processing ended: Mon Feb 21 15:37:22 2022
+    Error: Processing ended: Mon Feb 21 15:45:35 2022
     Error: Elapsed time: 00:00:03
     Error: Total CPU time (on all processors): 00:00:01
 
