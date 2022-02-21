@@ -34,7 +34,7 @@ case (Data)
 32'h8000000		:	Code = 27;
 32'h10000000	:	Code = 28;
 32'h20000000	:	Code = 29;
-32'h40000000	:	Code = 20;
+32'h40000000	:	Code = 30;
 32'h80000000	:	Code = 31;
 default			:	Code = 5'bx;
 endcase			

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Mon Feb 21 16:05:46 2022
+Mon Feb 21 16:15:02 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Feb 21 16:05:46 2022                ;
+; Analysis & Synthesis Status        ; Failed - Mon Feb 21 16:15:02 2022                ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
@@ -164,7 +164,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Feb 21 16:05:43 2022
+    Info: Processing started: Mon Feb 21 16:14:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
@@ -185,56 +185,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu
 Info (12127): Elaborating entity "datapath" for the top level hierarchy
 Warning (10858): Verilog HDL warning at datapath.v(43): object Cout used but never assigned
-Warning (10240): Verilog HDL Always Construct warning at datapath.v(82): inferring latch(es) for variable "ready", which holds its previous value in one or more paths through the always construct
 Warning (10030): Net "Cout" at datapath.v(43) has no driver or initial value, using a default initial value '0'
-Info (10041): Inferred latch for "ready[0]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[1]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[2]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[3]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[4]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[5]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[6]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[7]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[8]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[9]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[10]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[11]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[12]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[13]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[14]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[15]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[16]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[17]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[18]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[19]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[20]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[21]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[22]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[23]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[24]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[25]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[26]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[27]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[28]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[29]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[30]" at datapath.v(82)
-Info (10041): Inferred latch for "ready[31]" at datapath.v(82)
 Info (12128): Elaborating entity "register_32" for hierarchy "register_32:R0"
 Info (12128): Elaborating entity "encoder_32_5" for hierarchy "encoder_32_5:encoder"
 Warning (10762): Verilog HDL Case Statement warning at encoder.v(6): can't check case statement for completeness because the case expression has too many possible states
 Info (10264): Verilog HDL Case Statement information at encoder.v(6): all case item expressions in this case statement are onehot
-Info (12128): Elaborating entity "BusMux" for hierarchy "BusMux:bus"
-Error (287076): Can't find an inherited or default value for parameter "WIDTH" -- specify a parameter value File: c:/altera/13.0sp1/quartus/libraries/megafunctions/busmux.tdf Line: 32
-Error (287072): Symbolic name "WIDTH" is used but not defined File: c:/altera/13.0sp1/quartus/libraries/megafunctions/busmux.tdf Line: 37
-Error (287087): Group range of arithmetic expression contains negative number -1, but numbers in group ranges cannot be negative File: c:/altera/13.0sp1/quartus/libraries/megafunctions/busmux.tdf Line: 37
-Error (287087): Group range of arithmetic expression contains negative number -1, but numbers in group ranges cannot be negative File: c:/altera/13.0sp1/quartus/libraries/megafunctions/busmux.tdf Line: 38
-Error (287087): Group range of arithmetic expression contains negative number -1, but numbers in group ranges cannot be negative File: c:/altera/13.0sp1/quartus/libraries/megafunctions/busmux.tdf Line: 40
-Error (287087): Group range of arithmetic expression contains negative number -1, but numbers in group ranges cannot be negative File: c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc Line: 1
-Error (12152): Can't elaborate user hierarchy "BusMux:bus" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 169
+Info (12128): Elaborating entity "BusMux_32_1" for hierarchy "BusMux_32_1:bus"
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU"
+Error (10663): Verilog HDL Port Connection error at alu.v(12): output or inout port "Z" must be connected to a structural net expression File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 12
+Error (12152): Can't elaborate user hierarchy "alu:ALU" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 174
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 7 errors, 4 warnings
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 2 errors, 3 warnings
     Error: Peak virtual memory: 350 megabytes
-    Error: Processing ended: Mon Feb 21 16:05:46 2022
+    Error: Processing ended: Mon Feb 21 16:15:02 2022
     Error: Elapsed time: 00:00:03
     Error: Total CPU time (on all processors): 00:00:02
 
