@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Mon Feb 21 17:02:59 2022
+Mon Feb 21 17:33:13 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -10,8 +10,11 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Port Connectivity Checks: "BusMux_32_1:bus"
+  6. Port Connectivity Checks: "encoder_32_5:encoder"
+  7. Port Connectivity Checks: "register_32:MAR"
+  8. Analysis & Synthesis Messages
+  9. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Feb 21 17:02:59 2022                ;
+; Analysis & Synthesis Status        ; Failed - Mon Feb 21 17:33:13 2022                ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
@@ -158,13 +161,40 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
++---------------------------------------------------+
+; Port Connectivity Checks: "BusMux_32_1:bus"       ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; C_sign_extended ; Input ; Info     ; Stuck at GND ;
++-----------------+-------+----------+--------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "encoder_32_5:encoder" ;
++-------------+-------+----------+-----------------+
+; Port        ; Type  ; Severity ; Details         ;
++-------------+-------+----------+-----------------+
+; Data[31..5] ; Input ; Info     ; Stuck at GND    ;
++-------------+-------+----------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_32:MAR"                                                                        ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; output_Q ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Feb 21 17:02:56 2022
+    Info: Processing started: Mon Feb 21 17:33:09 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
@@ -192,12 +222,206 @@ Warning (10762): Verilog HDL Case Statement warning at encoder.v(6): can't check
 Info (10264): Verilog HDL Case Statement information at encoder.v(6): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "BusMux_32_1" for hierarchy "BusMux_32_1:bus"
 Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU"
-Error (10663): Verilog HDL Port Connection error at alu.v(12): output or inout port "Z" must be connected to a structural net expression File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 12
-Error (12152): Can't elaborate user hierarchy "alu:ALU" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 174
+Info (12128): Elaborating entity "boothmul" for hierarchy "alu:ALU|boothmul:multiplication"
+Warning (10199): Verilog HDL Case Statement warning at boothmul.v(20): case item expression never matches the case expression
+Info (10264): Verilog HDL Case Statement information at boothmul.v(18): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "division" for hierarchy "alu:ALU|division:divisionModule"
+Error (12014): Net "ZHI_out[31]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[31]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[63]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[30]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[30]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[62]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[29]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[29]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[61]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[28]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[28]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[60]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[27]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[27]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[59]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[26]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[26]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[58]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[25]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[25]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[57]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[24]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[24]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[56]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[23]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[23]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[55]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[22]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[22]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[54]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[21]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[21]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[53]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[20]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[20]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[52]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[19]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[19]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[51]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[18]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[18]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[50]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[17]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[17]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[49]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[16]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[16]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[48]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[15]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[15]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[47]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[14]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[14]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[46]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[13]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[13]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[45]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[12]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[12]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[44]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[11]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[11]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[43]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[10]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[10]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[42]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[9]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[9]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[41]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[8]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[8]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[40]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[7]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[7]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[39]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[6]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[6]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[38]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[5]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[5]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[37]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[4]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[4]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[36]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[3]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[3]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[35]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[2]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[2]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[34]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[1]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[1]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[33]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZHI_out[0]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
+    Error (12015): Net is fed by "register_32:ZHI|output_Q[0]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[32]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[31]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[31]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[31]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[30]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[30]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[30]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[29]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[29]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[29]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[28]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[28]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[28]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[27]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[27]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[27]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[26]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[26]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[26]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[25]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[25]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[25]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[24]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[24]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[24]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[23]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[23]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[23]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[22]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[22]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[22]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[21]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[21]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[21]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[20]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[20]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[20]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[19]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[19]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[19]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[18]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[18]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[18]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[17]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[17]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[17]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[16]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[16]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[16]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[15]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[15]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[15]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[14]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[14]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[14]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[13]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[13]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[13]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[12]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[12]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[12]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[11]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[11]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[11]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[10]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[10]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[10]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[9]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[9]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[9]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[8]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[8]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[8]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[7]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[7]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[7]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[6]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[6]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[6]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[5]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[5]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[5]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[4]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[4]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[4]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[3]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[3]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[3]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[2]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[2]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[2]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[1]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[1]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[1]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Error (12014): Net "ZLOW_out[0]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
+    Error (12015): Net is fed by "register_32:ZLOW|output_Q[0]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
+    Error (12015): Net is fed by "alu:ALU|ALU_Out[0]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 2 errors, 3 warnings
-    Error: Peak virtual memory: 350 megabytes
-    Error: Processing ended: Mon Feb 21 17:03:00 2022
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 192 errors, 4 warnings
+    Error: Peak virtual memory: 360 megabytes
+    Error: Processing ended: Mon Feb 21 17:33:13 2022
     Error: Elapsed time: 00:00:04
     Error: Total CPU time (on all processors): 00:00:02
 

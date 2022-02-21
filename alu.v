@@ -7,10 +7,10 @@ module alu(
     assign ALU_Out = ALU_Result; // ALU out
 	 reg [31:0] zeros = 32'h00000000;
 	 
-	 reg [63:0] tempMulOut;
-	 reg [63:0] tempDivOut;
+	 wire [63:0] tempMulOut;
+	 wire [63:0] tempDivOut;
 	 boothmul multiplication(A, B, tempMulOut);
-	 div division(A, B, tempDivOut);
+	 division divisionModule(A, B, tempDivOut);
 	 
     always @(*)
     begin
