@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Mon Feb 21 17:33:13 2022
+Tue Feb 22 15:35:39 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -10,11 +10,19 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Port Connectivity Checks: "BusMux_32_1:bus"
-  6. Port Connectivity Checks: "encoder_32_5:encoder"
-  7. Port Connectivity Checks: "register_32:MAR"
-  8. Analysis & Synthesis Messages
-  9. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "alu:ALU"
+ 12. Port Connectivity Checks: "BusMux_32_1:bus"
+ 13. Port Connectivity Checks: "encoder_32_5:encoder"
+ 14. Port Connectivity Checks: "register_32:MAR"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -40,20 +48,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Feb 21 17:33:13 2022                ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 22 15:35:39 2022            ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
 ; Family                             ; Cyclone III                                      ;
-; Total logic elements               ; N/A until Partition Merge                        ;
-;     Total combinational functions  ; N/A until Partition Merge                        ;
-;     Dedicated logic registers      ; N/A until Partition Merge                        ;
-; Total registers                    ; N/A until Partition Merge                        ;
-; Total pins                         ; N/A until Partition Merge                        ;
-; Total virtual pins                 ; N/A until Partition Merge                        ;
-; Total memory bits                  ; N/A until Partition Merge                        ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
-; Total PLLs                         ; N/A until Partition Merge                        ;
+; Total logic elements               ; 1,145                                            ;
+;     Total combinational functions  ; 441                                              ;
+;     Dedicated logic registers      ; 736                                              ;
+; Total registers                    ; 736                                              ;
+; Total pins                         ; 96                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -161,6 +169,183 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; div.v                            ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v         ;         ;
+; busmux_32_1.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v ;         ;
+; register_32.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v ;         ;
+; encoder.v                        ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v     ;         ;
+; datapath.v                       ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v    ;         ;
+; boothmul.v                       ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v    ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v         ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,145     ;
+;                                             ;           ;
+; Total combinational functions               ; 441       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 320       ;
+;     -- 3 input functions                    ; 38        ;
+;     -- <=2 input functions                  ; 83        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 441       ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 736       ;
+;     -- Dedicated logic registers            ; 736       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 96        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 736       ;
+; Total fan-out                               ; 3896      ;
+; Average fan-out                             ; 2.85      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; |datapath                  ; 441 (285)         ; 736 (0)      ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |datapath                      ; work         ;
+;    |BusMux_32_1:bus|       ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|BusMux_32_1:bus      ; work         ;
+;    |encoder_32_5:encoder|  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|encoder_32_5:encoder ; work         ;
+;    |register_32:HI|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:HI       ; work         ;
+;    |register_32:IR|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:IR       ; work         ;
+;    |register_32:LO|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:LO       ; work         ;
+;    |register_32:MDR|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:MDR      ; work         ;
+;    |register_32:PC|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:PC       ; work         ;
+;    |register_32:R0|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R0       ; work         ;
+;    |register_32:R10|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R10      ; work         ;
+;    |register_32:R11|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R11      ; work         ;
+;    |register_32:R12|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R12      ; work         ;
+;    |register_32:R13|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R13      ; work         ;
+;    |register_32:R14|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R14      ; work         ;
+;    |register_32:R15|       ; 33 (33)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R15      ; work         ;
+;    |register_32:R1|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R1       ; work         ;
+;    |register_32:R2|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R2       ; work         ;
+;    |register_32:R3|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R3       ; work         ;
+;    |register_32:R4|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R4       ; work         ;
+;    |register_32:R5|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R5       ; work         ;
+;    |register_32:R6|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R6       ; work         ;
+;    |register_32:R7|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R7       ; work         ;
+;    |register_32:R8|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R8       ; work         ;
+;    |register_32:R9|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R9       ; work         ;
+;    |register_32:ZHI|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:ZHI      ; work         ;
+;    |register_32:inPort|    ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:inPort   ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++----------------------------------------+------------------------------------------+
+; Register name                          ; Reason for Removal                       ;
++----------------------------------------+------------------------------------------+
+; register_32:ZLOW|output_Q[5]           ; Merged with register_32:ZHI|output_Q[5]  ;
+; register_32:ZLOW|output_Q[4]           ; Merged with register_32:ZHI|output_Q[4]  ;
+; register_32:ZLOW|output_Q[3]           ; Merged with register_32:ZHI|output_Q[3]  ;
+; register_32:ZLOW|output_Q[2]           ; Merged with register_32:ZHI|output_Q[2]  ;
+; register_32:ZLOW|output_Q[1]           ; Merged with register_32:ZHI|output_Q[1]  ;
+; register_32:ZLOW|output_Q[0]           ; Merged with register_32:ZHI|output_Q[0]  ;
+; register_32:ZLOW|output_Q[6]           ; Merged with register_32:ZHI|output_Q[6]  ;
+; register_32:ZLOW|output_Q[7]           ; Merged with register_32:ZHI|output_Q[7]  ;
+; register_32:ZLOW|output_Q[8]           ; Merged with register_32:ZHI|output_Q[8]  ;
+; register_32:ZLOW|output_Q[9]           ; Merged with register_32:ZHI|output_Q[9]  ;
+; register_32:ZLOW|output_Q[10]          ; Merged with register_32:ZHI|output_Q[10] ;
+; register_32:ZLOW|output_Q[11]          ; Merged with register_32:ZHI|output_Q[11] ;
+; register_32:ZLOW|output_Q[12]          ; Merged with register_32:ZHI|output_Q[12] ;
+; register_32:ZLOW|output_Q[13]          ; Merged with register_32:ZHI|output_Q[13] ;
+; register_32:ZLOW|output_Q[14]          ; Merged with register_32:ZHI|output_Q[14] ;
+; register_32:ZLOW|output_Q[15]          ; Merged with register_32:ZHI|output_Q[15] ;
+; register_32:ZLOW|output_Q[16]          ; Merged with register_32:ZHI|output_Q[16] ;
+; register_32:ZLOW|output_Q[17]          ; Merged with register_32:ZHI|output_Q[17] ;
+; register_32:ZLOW|output_Q[18]          ; Merged with register_32:ZHI|output_Q[18] ;
+; register_32:ZLOW|output_Q[19]          ; Merged with register_32:ZHI|output_Q[19] ;
+; register_32:ZLOW|output_Q[20]          ; Merged with register_32:ZHI|output_Q[20] ;
+; register_32:ZLOW|output_Q[21]          ; Merged with register_32:ZHI|output_Q[21] ;
+; register_32:ZLOW|output_Q[22]          ; Merged with register_32:ZHI|output_Q[22] ;
+; register_32:ZLOW|output_Q[23]          ; Merged with register_32:ZHI|output_Q[23] ;
+; register_32:ZLOW|output_Q[24]          ; Merged with register_32:ZHI|output_Q[24] ;
+; register_32:ZLOW|output_Q[25]          ; Merged with register_32:ZHI|output_Q[25] ;
+; register_32:ZLOW|output_Q[26]          ; Merged with register_32:ZHI|output_Q[26] ;
+; register_32:ZLOW|output_Q[27]          ; Merged with register_32:ZHI|output_Q[27] ;
+; register_32:ZLOW|output_Q[28]          ; Merged with register_32:ZHI|output_Q[28] ;
+; register_32:ZLOW|output_Q[29]          ; Merged with register_32:ZHI|output_Q[29] ;
+; register_32:ZLOW|output_Q[30]          ; Merged with register_32:ZHI|output_Q[30] ;
+; register_32:ZLOW|output_Q[31]          ; Merged with register_32:ZHI|output_Q[31] ;
+; Total Number of Removed Registers = 32 ;                                          ;
++----------------------------------------+------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 736   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 736   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R15|output_Q[2]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:PC|output_Q[16]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:HI|output_Q[31]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:LO|output_Q[27]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:IR|output_Q[11]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:ZHI|output_Q[23]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:MDR|output_Q[16]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:inPort|output_Q[5] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R7|output_Q[29]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R8|output_Q[5]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R9|output_Q[27]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R10|output_Q[15]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R11|output_Q[27]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R12|output_Q[16]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R13|output_Q[27]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R14|output_Q[5]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R3|output_Q[27]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R4|output_Q[19]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R5|output_Q[27]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R6|output_Q[24]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R1|output_Q[15]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R2|output_Q[5]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R0|output_Q[2]     ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |datapath|BusMux_32_1:bus|Mux2           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:ALU"                                                                               ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; ALU_Out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------+
 ; Port Connectivity Checks: "BusMux_32_1:bus"       ;
 +-----------------+-------+----------+--------------+
@@ -189,12 +374,21 @@ applicable agreement for further details.
 
 
 +-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Feb 21 17:33:09 2022
+    Info: Processing started: Tue Feb 22 15:35:32 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
@@ -226,204 +420,27 @@ Info (12128): Elaborating entity "boothmul" for hierarchy "alu:ALU|boothmul:mult
 Warning (10199): Verilog HDL Case Statement warning at boothmul.v(20): case item expression never matches the case expression
 Info (10264): Verilog HDL Case Statement information at boothmul.v(18): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "division" for hierarchy "alu:ALU|division:divisionModule"
-Error (12014): Net "ZHI_out[31]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[31]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[63]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[30]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[30]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[62]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[29]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[29]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[61]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[28]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[28]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[60]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[27]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[27]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[59]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[26]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[26]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[58]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[25]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[25]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[57]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[24]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[24]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[56]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[23]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[23]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[55]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[22]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[22]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[54]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[21]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[21]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[53]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[20]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[20]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[52]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[19]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[19]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[51]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[18]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[18]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[50]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[17]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[17]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[49]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[16]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[16]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[48]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[15]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[15]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[47]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[14]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[14]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[46]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[13]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[13]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[45]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[12]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[12]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[44]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[11]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[11]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[43]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[10]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[10]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[42]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[9]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[9]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[41]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[8]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[8]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[40]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[7]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[7]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[39]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[6]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[6]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[38]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[5]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[5]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[37]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[4]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[4]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[36]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[3]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[3]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[35]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[2]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[2]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[34]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[1]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[1]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[33]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZHI_out[0]", which fans out to "WideOr20", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 37
-    Error (12015): Net is fed by "register_32:ZHI|output_Q[0]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[32]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[31]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[31]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[31]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[30]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[30]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[30]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[29]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[29]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[29]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[28]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[28]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[28]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[27]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[27]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[27]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[26]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[26]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[26]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[25]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[25]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[25]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[24]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[24]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[24]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[23]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[23]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[23]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[22]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[22]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[22]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[21]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[21]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[21]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[20]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[20]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[20]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[19]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[19]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[19]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[18]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[18]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[18]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[17]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[17]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[17]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[16]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[16]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[16]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[15]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[15]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[15]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[14]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[14]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[14]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[13]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[13]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[13]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[12]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[12]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[12]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[11]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[11]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[11]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[10]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[10]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[10]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[9]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[9]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[9]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[8]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[8]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[8]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[7]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[7]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[7]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[6]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[6]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[6]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[5]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[5]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[5]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[4]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[4]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[4]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[3]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[3]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[3]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[2]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[2]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[2]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[1]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[1]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[1]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
-Error (12014): Net "ZLOW_out[0]", which fans out to "WideOr21", cannot be assigned more than one value File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v Line: 38
-    Error (12015): Net is fed by "register_32:ZLOW|output_Q[0]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v Line: 10
-    Error (12015): Net is fed by "alu:ALU|ALU_Out[0]" File: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v Line: 5
+Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 192 errors, 4 warnings
-    Error: Peak virtual memory: 360 megabytes
-    Error: Processing ended: Mon Feb 21 17:33:13 2022
-    Error: Elapsed time: 00:00:04
-    Error: Total CPU time (on all processors): 00:00:02
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 7 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Y_in"
+    Warning (15610): No output dependent on input pin "MAR_in"
+    Warning (15610): No output dependent on input pin "ALU_select[0]"
+    Warning (15610): No output dependent on input pin "ALU_select[1]"
+    Warning (15610): No output dependent on input pin "ALU_select[2]"
+    Warning (15610): No output dependent on input pin "ALU_select[3]"
+    Warning (15610): No output dependent on input pin "ALU_select[4]"
+Info (21057): Implemented 1273 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 64 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 1177 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 389 megabytes
+    Info: Processing ended: Tue Feb 22 15:35:39 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+

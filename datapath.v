@@ -173,8 +173,9 @@ end
 	//ALU
 	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out);
 	
-	assign ZHI_out [31:0] = ALU_out[63:32];
-	assign ZLOW_out [31:0] = ALU_out[31:0];
+	//assign ZHI_out [31:0] = ALU_out[63:32];
+	//assign ZLOW_out [31:0] = ALU_out[31:0];
+	//reg [63:0] Z = ALU_out[31:0];
 	
 	
 endmodule
