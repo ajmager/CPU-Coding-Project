@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue Feb 22 15:35:52 2022
+Fitter Status : Successful - Tue Feb 22 16:02:07 2022
 Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : CPUProject
 Top-level Entity Name : datapath
 Family : Cyclone III
 Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 875 / 15,408 ( 6 % )
-    Total combinational functions : 441 / 15,408 ( 3 % )
-    Dedicated logic registers : 736 / 15,408 ( 5 % )
-Total registers : 736
+Total logic elements : 8,284 / 15,408 ( 54 % )
+    Total combinational functions : 7,863 / 15,408 ( 51 % )
+    Dedicated logic registers : 800 / 15,408 ( 5 % )
+Total registers : 800
 Total pins : 96 / 347 ( 28 % )
 Total virtual pins : 0
 Total memory bits : 0 / 516,096 ( 0 % )

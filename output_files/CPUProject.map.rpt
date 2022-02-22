@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Tue Feb 22 15:35:39 2022
+Tue Feb 22 16:00:55 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,16 +13,15 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "alu:ALU"
- 12. Port Connectivity Checks: "BusMux_32_1:bus"
- 13. Port Connectivity Checks: "encoder_32_5:encoder"
- 14. Port Connectivity Checks: "register_32:MAR"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: alu:ALU|lpm_add_sub:Add0
+ 11. Port Connectivity Checks: "BusMux_32_1:bus"
+ 12. Port Connectivity Checks: "encoder_32_5:encoder"
+ 13. Port Connectivity Checks: "register_32:MAR"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,15 +47,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 22 15:35:39 2022            ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 22 16:00:55 2022            ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
 ; Family                             ; Cyclone III                                      ;
-; Total logic elements               ; 1,145                                            ;
-;     Total combinational functions  ; 441                                              ;
-;     Dedicated logic registers      ; 736                                              ;
-; Total registers                    ; 736                                              ;
+; Total logic elements               ; 8,567                                            ;
+;     Total combinational functions  ; 7,863                                            ;
+;     Dedicated logic registers      ; 800                                              ;
+; Total registers                    ; 800                                              ;
 ; Total pins                         ; 96                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
@@ -161,27 +160,37 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                             ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
-; div.v                            ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v         ;         ;
-; busmux_32_1.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v ;         ;
-; register_32.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v ;         ;
-; encoder.v                        ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v     ;         ;
-; datapath.v                       ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v    ;         ;
-; boothmul.v                       ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v    ;         ;
-; alu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v         ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; div.v                            ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v              ;         ;
+; busmux_32_1.v                    ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v      ;         ;
+; register_32.v                    ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v      ;         ;
+; encoder.v                        ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v          ;         ;
+; datapath.v                       ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v         ;         ;
+; boothmul.v                       ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v         ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v              ;         ;
+; register_64.v                    ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v      ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf                               ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc                                   ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc                                  ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                                  ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                                  ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                       ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                ;         ;
+; db/add_sub_gui.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/db/add_sub_gui.tdf ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -189,105 +198,70 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,145     ;
+; Estimated Total logic elements              ; 8,567     ;
 ;                                             ;           ;
-; Total combinational functions               ; 441       ;
+; Total combinational functions               ; 7863      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 320       ;
-;     -- 3 input functions                    ; 38        ;
-;     -- <=2 input functions                  ; 83        ;
+;     -- 4 input functions                    ; 2576      ;
+;     -- 3 input functions                    ; 5010      ;
+;     -- <=2 input functions                  ; 277       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 441       ;
-;     -- arithmetic mode                      ; 0         ;
+;     -- normal mode                          ; 3925      ;
+;     -- arithmetic mode                      ; 3938      ;
 ;                                             ;           ;
-; Total registers                             ; 736       ;
-;     -- Dedicated logic registers            ; 736       ;
+; Total registers                             ; 800       ;
+;     -- Dedicated logic registers            ; 800       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 96        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 736       ;
-; Total fan-out                               ; 3896      ;
-; Average fan-out                             ; 2.85      ;
+; Maximum fan-out                             ; 800       ;
+; Total fan-out                               ; 28447     ;
+; Average fan-out                             ; 3.21      ;
 +---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
-; |datapath                  ; 441 (285)         ; 736 (0)      ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |datapath                      ; work         ;
-;    |BusMux_32_1:bus|       ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|BusMux_32_1:bus      ; work         ;
-;    |encoder_32_5:encoder|  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|encoder_32_5:encoder ; work         ;
-;    |register_32:HI|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:HI       ; work         ;
-;    |register_32:IR|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:IR       ; work         ;
-;    |register_32:LO|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:LO       ; work         ;
-;    |register_32:MDR|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:MDR      ; work         ;
-;    |register_32:PC|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:PC       ; work         ;
-;    |register_32:R0|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R0       ; work         ;
-;    |register_32:R10|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R10      ; work         ;
-;    |register_32:R11|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R11      ; work         ;
-;    |register_32:R12|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R12      ; work         ;
-;    |register_32:R13|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R13      ; work         ;
-;    |register_32:R14|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R14      ; work         ;
-;    |register_32:R15|       ; 33 (33)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R15      ; work         ;
-;    |register_32:R1|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R1       ; work         ;
-;    |register_32:R2|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R2       ; work         ;
-;    |register_32:R3|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R3       ; work         ;
-;    |register_32:R4|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R4       ; work         ;
-;    |register_32:R5|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R5       ; work         ;
-;    |register_32:R6|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R6       ; work         ;
-;    |register_32:R7|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R7       ; work         ;
-;    |register_32:R8|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R8       ; work         ;
-;    |register_32:R9|        ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R9       ; work         ;
-;    |register_32:ZHI|       ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:ZHI      ; work         ;
-;    |register_32:inPort|    ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:inPort   ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; |datapath                             ; 7863 (301)        ; 800 (0)      ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |datapath                                                     ; work         ;
+;    |BusMux_32_1:bus|                  ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|BusMux_32_1:bus                                     ; work         ;
+;    |alu:ALU|                          ; 7306 (266)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU                                             ; work         ;
+;       |boothmul:multiplication|       ; 3908 (3908)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|boothmul:multiplication                     ; work         ;
+;       |division:divisionModule|       ; 3067 (3067)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|division:divisionModule                     ; work         ;
+;       |lpm_add_sub:Add0|              ; 65 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|lpm_add_sub:Add0                            ; work         ;
+;          |add_sub_gui:auto_generated| ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|lpm_add_sub:Add0|add_sub_gui:auto_generated ; work         ;
+;    |encoder_32_5:encoder|             ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|encoder_32_5:encoder                                ; work         ;
+;    |register_32:HI|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:HI                                      ; work         ;
+;    |register_32:IR|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:IR                                      ; work         ;
+;    |register_32:LO|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:LO                                      ; work         ;
+;    |register_32:MDR|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:MDR                                     ; work         ;
+;    |register_32:PC|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:PC                                      ; work         ;
+;    |register_32:R0|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R0                                      ; work         ;
+;    |register_32:R10|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R10                                     ; work         ;
+;    |register_32:R11|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R11                                     ; work         ;
+;    |register_32:R12|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R12                                     ; work         ;
+;    |register_32:R13|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R13                                     ; work         ;
+;    |register_32:R14|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R14                                     ; work         ;
+;    |register_32:R15|                  ; 33 (33)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R15                                     ; work         ;
+;    |register_32:R1|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R1                                      ; work         ;
+;    |register_32:R2|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R2                                      ; work         ;
+;    |register_32:R3|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R3                                      ; work         ;
+;    |register_32:R4|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R4                                      ; work         ;
+;    |register_32:R5|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R5                                      ; work         ;
+;    |register_32:R6|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R6                                      ; work         ;
+;    |register_32:R7|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R7                                      ; work         ;
+;    |register_32:R8|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R8                                      ; work         ;
+;    |register_32:R9|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R9                                      ; work         ;
+;    |register_32:Y|                    ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:Y                                       ; work         ;
+;    |register_32:inPort|               ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:inPort                                  ; work         ;
+;    |register_64:Z|                    ; 99 (99)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_64:Z                                       ; work         ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                ;
-+----------------------------------------+------------------------------------------+
-; Register name                          ; Reason for Removal                       ;
-+----------------------------------------+------------------------------------------+
-; register_32:ZLOW|output_Q[5]           ; Merged with register_32:ZHI|output_Q[5]  ;
-; register_32:ZLOW|output_Q[4]           ; Merged with register_32:ZHI|output_Q[4]  ;
-; register_32:ZLOW|output_Q[3]           ; Merged with register_32:ZHI|output_Q[3]  ;
-; register_32:ZLOW|output_Q[2]           ; Merged with register_32:ZHI|output_Q[2]  ;
-; register_32:ZLOW|output_Q[1]           ; Merged with register_32:ZHI|output_Q[1]  ;
-; register_32:ZLOW|output_Q[0]           ; Merged with register_32:ZHI|output_Q[0]  ;
-; register_32:ZLOW|output_Q[6]           ; Merged with register_32:ZHI|output_Q[6]  ;
-; register_32:ZLOW|output_Q[7]           ; Merged with register_32:ZHI|output_Q[7]  ;
-; register_32:ZLOW|output_Q[8]           ; Merged with register_32:ZHI|output_Q[8]  ;
-; register_32:ZLOW|output_Q[9]           ; Merged with register_32:ZHI|output_Q[9]  ;
-; register_32:ZLOW|output_Q[10]          ; Merged with register_32:ZHI|output_Q[10] ;
-; register_32:ZLOW|output_Q[11]          ; Merged with register_32:ZHI|output_Q[11] ;
-; register_32:ZLOW|output_Q[12]          ; Merged with register_32:ZHI|output_Q[12] ;
-; register_32:ZLOW|output_Q[13]          ; Merged with register_32:ZHI|output_Q[13] ;
-; register_32:ZLOW|output_Q[14]          ; Merged with register_32:ZHI|output_Q[14] ;
-; register_32:ZLOW|output_Q[15]          ; Merged with register_32:ZHI|output_Q[15] ;
-; register_32:ZLOW|output_Q[16]          ; Merged with register_32:ZHI|output_Q[16] ;
-; register_32:ZLOW|output_Q[17]          ; Merged with register_32:ZHI|output_Q[17] ;
-; register_32:ZLOW|output_Q[18]          ; Merged with register_32:ZHI|output_Q[18] ;
-; register_32:ZLOW|output_Q[19]          ; Merged with register_32:ZHI|output_Q[19] ;
-; register_32:ZLOW|output_Q[20]          ; Merged with register_32:ZHI|output_Q[20] ;
-; register_32:ZLOW|output_Q[21]          ; Merged with register_32:ZHI|output_Q[21] ;
-; register_32:ZLOW|output_Q[22]          ; Merged with register_32:ZHI|output_Q[22] ;
-; register_32:ZLOW|output_Q[23]          ; Merged with register_32:ZHI|output_Q[23] ;
-; register_32:ZLOW|output_Q[24]          ; Merged with register_32:ZHI|output_Q[24] ;
-; register_32:ZLOW|output_Q[25]          ; Merged with register_32:ZHI|output_Q[25] ;
-; register_32:ZLOW|output_Q[26]          ; Merged with register_32:ZHI|output_Q[26] ;
-; register_32:ZLOW|output_Q[27]          ; Merged with register_32:ZHI|output_Q[27] ;
-; register_32:ZLOW|output_Q[28]          ; Merged with register_32:ZHI|output_Q[28] ;
-; register_32:ZLOW|output_Q[29]          ; Merged with register_32:ZHI|output_Q[29] ;
-; register_32:ZLOW|output_Q[30]          ; Merged with register_32:ZHI|output_Q[30] ;
-; register_32:ZLOW|output_Q[31]          ; Merged with register_32:ZHI|output_Q[31] ;
-; Total Number of Removed Registers = 32 ;                                          ;
-+----------------------------------------+------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -295,55 +269,106 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 736   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 800   ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 736   ;
+; Number of registers using Clock Enable       ; 800   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R15|output_Q[2]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:PC|output_Q[16]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:HI|output_Q[31]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:LO|output_Q[27]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:IR|output_Q[11]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:ZHI|output_Q[23]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:MDR|output_Q[16]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:inPort|output_Q[5] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R7|output_Q[29]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R8|output_Q[5]     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R9|output_Q[27]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R10|output_Q[15]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R11|output_Q[27]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R12|output_Q[16]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R13|output_Q[27]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R14|output_Q[5]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R3|output_Q[27]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R4|output_Q[19]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R5|output_Q[27]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R6|output_Q[24]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R1|output_Q[15]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R2|output_Q[5]     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R0|output_Q[2]     ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |datapath|BusMux_32_1:bus|Mux2           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R15|output_Q[15]                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:PC|output_Q[27]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:HI|output_Q[27]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:LO|output_Q[2]                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:IR|output_Q[28]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:MDR|output_Q[15]                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:inPort|output_Q[6]              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R7|output_Q[14]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R8|output_Q[31]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R9|output_Q[16]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R10|output_Q[12]                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R11|output_Q[17]                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R12|output_Q[9]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R13|output_Q[12]                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R14|output_Q[1]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R3|output_Q[17]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R4|output_Q[12]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R5|output_Q[17]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R6|output_Q[16]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R1|output_Q[5]                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R2|output_Q[0]                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R0|output_Q[26]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:Y|output_Q[9]                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |datapath|register_64:Z|output_Q[62]                  ;
+; 18:1               ; 30 bits   ; 360 LEs       ; 90 LEs               ; 270 LEs                ; Yes        ; |datapath|register_64:Z|output_Q[33]                  ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |datapath|BusMux_32_1:bus|Mux7                        ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector19  ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector61  ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector75  ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector116 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector146 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector177 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector215 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector249 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector280 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector316 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector325 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector359 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector405 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector427 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector456 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector509 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector531 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector568 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector600 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector619 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector646 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector702 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector712 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector759 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector797 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector823 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector851 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector880 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector897 ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector934 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ALU"                                                                               ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; ALU_Out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: alu:ALU|lpm_add_sub:Add0 ;
++------------------------+-------------+------------------------------------+
+; Parameter Name         ; Value       ; Type                               ;
++------------------------+-------------+------------------------------------+
+; LPM_WIDTH              ; 32          ; Untyped                            ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                            ;
+; LPM_DIRECTION          ; DEFAULT     ; Untyped                            ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                            ;
+; LPM_PIPELINE           ; 0           ; Untyped                            ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                            ;
+; REGISTERED_AT_END      ; 0           ; Untyped                            ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                            ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                            ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                            ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                 ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                            ;
+; USE_WYS                ; OFF         ; Untyped                            ;
+; STYLE                  ; FAST        ; Untyped                            ;
+; CBXI_PARAMETER         ; add_sub_gui ; Untyped                            ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                     ;
++------------------------+-------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------+
@@ -378,7 +403,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -388,7 +413,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Feb 22 15:35:32 2022
+    Info: Processing started: Tue Feb 22 16:00:39 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
@@ -407,6 +432,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file boothmu
     Info (12023): Found entity 1: boothmul
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu
+Info (12021): Found 1 design units, including 1 entities, in source file register_64.v
+    Info (12023): Found entity 1: register_64
 Info (12127): Elaborating entity "datapath" for the top level hierarchy
 Warning (10858): Verilog HDL warning at datapath.v(43): object Cout used but never assigned
 Warning (10030): Net "Cout" at datapath.v(43) has no driver or initial value, using a default initial value '0'
@@ -420,27 +447,33 @@ Info (12128): Elaborating entity "boothmul" for hierarchy "alu:ALU|boothmul:mult
 Warning (10199): Verilog HDL Case Statement warning at boothmul.v(20): case item expression never matches the case expression
 Info (10264): Verilog HDL Case Statement information at boothmul.v(18): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "division" for hierarchy "alu:ALU|division:divisionModule"
+Info (12128): Elaborating entity "register_64" for hierarchy "register_64:Z"
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "alu:ALU|Add0"
+Info (12130): Elaborated megafunction instantiation "alu:ALU|lpm_add_sub:Add0"
+Info (12133): Instantiated megafunction "alu:ALU|lpm_add_sub:Add0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "32"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_gui.tdf
+    Info (12023): Found entity 1: add_sub_gui
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Y_in"
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "MAR_in"
-    Warning (15610): No output dependent on input pin "ALU_select[0]"
-    Warning (15610): No output dependent on input pin "ALU_select[1]"
-    Warning (15610): No output dependent on input pin "ALU_select[2]"
-    Warning (15610): No output dependent on input pin "ALU_select[3]"
     Warning (15610): No output dependent on input pin "ALU_select[4]"
-Info (21057): Implemented 1273 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8695 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 64 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 1177 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 389 megabytes
-    Info: Processing ended: Tue Feb 22 15:35:39 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+    Info (21061): Implemented 8599 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 434 megabytes
+    Info: Processing ended: Tue Feb 22 16:00:55 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 
 +------------------------------------------+

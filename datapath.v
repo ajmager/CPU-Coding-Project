@@ -71,11 +71,11 @@ output[31:0] BusMuxData_out
 	register_32 LO(clk, clr, LO_in, BUS_data, LO_out);
 	register_32 IR(clk, clr, IR_in, BUS_data, IR_out);
 	register_32 Y(clk, clr, Y_in, BUS_data, Y_out);
-	register_32 ZHI(clk, clr, Z_in, BUS_data, ZHI_out);
-	register_32 ZLOW(clk, clr, Z_in, BUS_data, ZLOW_out);
 	register_32 MAR(clk, clr, MAR_in, BUS_data, MAR_out);
 	register_32 MDR(clk, clr, MDR_in, BUS_data, MDR_out);
 	register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
+	
+	
 	
 always @ (*) begin
 	ready <= 5'b00000;
@@ -173,9 +173,11 @@ end
 	//ALU
 	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out);
 	
-	//assign ZHI_out [31:0] = ALU_out[63:32];
-	//assign ZLOW_out [31:0] = ALU_out[31:0];
-	//reg [63:0] Z = ALU_out[31:0];
+	wire [63:0] Z_out;
+	register_64 Z(clk, clr, Z_in, ALU_out, Z_out);
+	
+	assign ZLOW_out = Z_out[31:0];
+	assign ZHI_out = Z_out[63:32];
 	
 	
 endmodule
