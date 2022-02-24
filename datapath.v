@@ -1,50 +1,39 @@
 //datapath.v
 module datapath (
-input clk, clr, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in, 
-input PC_in, IR_in, Y_in, Z_in, HI_in, LO_in,
-input MAR_in, MDR_in, 
+input clk, clr, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in,
+input PC_in, Inc_PC, IR_in, Y_in, Z_in, HI_in, LO_in,
+input MAR_in, MDR_in, read, 
 input inPort_in,
+input r0out, r1out, r2out, r3out, r4out, r5out, r6out, r7out, r8out, r9out, r10out, r11out, r12out, r13out, r14out, r15out,
+input PCout, ZLOWout, ZHIout, LOout, HIout, MDRout, IRout, inPortout, Cout,
 input [4:0] ALU_select,
-input [31:0] MdataIn,
-output[31:0] BusMuxData_out
+input [31:0] MdataIn
+//output[31:0] BusMuxData_out
 );
 
 	//data out wires
 	
 	//register out r0-r15 wires
-	wire [31:0] r0_out;
-	wire [31:0] r1_out;
-	wire [31:0] r2_out;
-	wire [31:0] r3_out;
-	wire [31:0] r4_out;
-	wire [31:0] r5_out;
-	wire [31:0] r6_out;
-	wire [31:0] r7_out;
-	wire [31:0] r8_out;
-	wire [31:0] r9_out;
-	wire [31:0] r10_out;
-	wire [31:0] r11_out;
-	wire [31:0] r12_out;
-	wire [31:0] r13_out;
-	wire [31:0] r14_out;
-	wire [31:0] r15_out;
+	wire [31:0] r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out;
 	
 	wire [31:0] PC_out;
 	wire [31:0] HI_out;	//back to datapath
 	wire [31:0] LO_out;	//back to datapath
-	wire [31:0] IR_out;	
+	wire IR_out;	
 	wire [31:0] Y_out;	//to ALU
+	wire [63:0] Z_out;	//out of Z register into Zlow/Zhi
+	
 	wire [31:0] ZHI_out;	//Out from Z
 	wire [31:0] ZLOW_out;//Out from Z
 	wire [31:0] MAR_out;	//To memory chip
 	wire [31:0] MDR_out;	//To memory chip
 	wire [31:0] outPort_out;	//To I/O Units
 	wire [31:0] inPort_out; //to itself
-	wire [31:0] Cout;
+	wire [31:0] C_out;
 	
 	wire [31:0] BUS_data;
 	
-	assign BUS_data [31:0] = MdataIn [31:0];
+	//assign BUS_data [31:0] = MdataIn [31:0];
 	
 	integer ready = 5'b00000;
 	
@@ -66,118 +55,32 @@ output[31:0] BusMuxData_out
 	register_32 R14(clk, clr, r14_in, BUS_data, r14_out);
 	register_32 R15(clk, clr, r15_in, BUS_data, r15_out);
 	
-	register_32 PC(clk, clr, PC_in, BUS_data, PC_out);
+	register_32 IR(clk, clr, IR_in, BUS_data, IR_out);
+	register_PC PC(clk, clr, PC_in, Inc_PC, BUS_data, PC_out);
+	
+	register_32 MAR(clk, clr, MAR_in, BUS_data, MAR_out);
+	register_MDR MDR(clk, clr, MDR_in, BUS_data, MdataIn, read, MDR_out);
+	
 	register_32 HI(clk, clr, HI_in, BUS_data, HI_out);
 	register_32 LO(clk, clr, LO_in, BUS_data, LO_out);
-	register_32 IR(clk, clr, IR_in, BUS_data, IR_out);
-	register_32 Y(clk, clr, Y_in, BUS_data, Y_out);
-	register_32 MAR(clk, clr, MAR_in, BUS_data, MAR_out);
-	register_32 MDR(clk, clr, MDR_in, BUS_data, MDR_out);
-	register_32 inPort(clk, clr, inPort_in, BUS_data, inPort_out);
 	
+	register_32 Y(clk, clr, Y_in, BUS_data, Y_out); 
 	
-	
-always @ (*) begin
-	ready <= 5'b00000;
-	if (r0_out) begin
-		ready <= 5'b00001;
-	end
-	if (r1_out) begin
-		ready <= 5'b00010;
-	end
-	if (r2_out) begin
-		ready <= 5'b00011;
-	end	
-	if (r3_out) begin
-		ready <= 5'b00100;
-	end
-	if (r4_out) begin
-		ready <= 5'b00101;
-	end
-	if (r5_out) begin
-		ready <= 5'b00110;
-	end
-	if (r6_out) begin
-		ready <= 5'b00111;
-	end
-	if (r7_out) begin
-		ready <= 5'b01000;
-	end
-	if (r8_out) begin
-		ready <= 5'b01001;
-	end
-	if (r9_out) begin
-		ready <= 5'b01010;
-	end
-	if (r10_out) begin
-		ready <= 5'b01011;
-	end
-	if (r11_out) begin
-		ready <= 5'b01100;
-	end
-	if (r12_out) begin
-		ready <= 5'b01101;
-	end
-	if (r13_out) begin
-		ready <= 5'b01110;
-	end
-	if (r14_out) begin
-		ready <= 5'b01111;
-	end
-	if (r15_out) begin
-		ready <= 5'b10000;
-	end
-	if (PC_out) begin
-		ready <= 5'b10001;
-	end
-	if (HI_out) begin
-		ready <= 5'b10010;
-	end
-	if (LO_out) begin
-		ready <= 5'b10011;
-	end
-	if (IR_out) begin
-		ready <= 5'b10100;
-	end
-	if (ZHI_out) begin
-		ready <= 5'b10110;
-	end	
-	if (ZLOW_out) begin
-		ready <= 5'b10111;
-	end
-	if (MDR_out) begin
-		ready <= 5'b11000;
-	end
-	if	(inPort_out) begin
-		ready <= 5'b11001;
-	end
-	if	(Cout) begin
-		ready <= 5'b11010;
-	end
-end
-
-	
-	wire[4:0] select;
-	
-	//Encoder - select signals S0 - S4
-	encoder_32_5 encoder(select, ready);
-	
-	//assign C_sign_extended = {14{IR_out[17]}, IR_out [17:0]};
-	wire [31:0] C_sign_extended  = 32'h00000000;
-	
-	//Bus
-	BusMux_32_1 bus(BusMuxData_out, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select);
 	
 	wire [63:0] ALU_out;
-	
 	//ALU
-	alu ALU(Y_out, BusMuxData_out, ALU_select, ALU_out);
-	
-	wire [63:0] Z_out;
+	alu ALU(Y_out, BUS_data, ALU_select, ALU_out);
 	register_64 Z(clk, clr, Z_in, ALU_out, Z_out);
-	
+		
 	assign ZLOW_out = Z_out[31:0];
 	assign ZHI_out = Z_out[63:32];
+	
+	bus bus_module(
+		r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended,
+		r0out, r1out, r2out, r3out, r4out, r5out, r6out, r7out, r8out, r9out, r10out, r11out, r12out, r13out, r14out, r15out, HIout, LOout, ZHIout, ZLOWout, PCout, MDRout, inPortout, Cout,
+		BUS_data,
+		clk
+	);
 	
 	
 endmodule

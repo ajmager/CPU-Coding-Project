@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPUProject
-Tue Feb 22 16:00:55 2022
+Wed Feb 23 22:45:15 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -14,11 +14,11 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for Inferred Entity Instance: alu:ALU|lpm_add_sub:Add0
- 11. Port Connectivity Checks: "BusMux_32_1:bus"
- 12. Port Connectivity Checks: "encoder_32_5:encoder"
- 13. Port Connectivity Checks: "register_32:MAR"
+  9. Port Connectivity Checks: "bus:bus_module|BusMux_32_1:busmux"
+ 10. Port Connectivity Checks: "bus:bus_module"
+ 11. Port Connectivity Checks: "register_MDR:MDR"
+ 12. Port Connectivity Checks: "register_32:MAR"
+ 13. Port Connectivity Checks: "register_32:IR"
  14. Elapsed Time Per Partition
  15. Analysis & Synthesis Messages
  16. Analysis & Synthesis Suppressed Messages
@@ -47,16 +47,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 22 16:00:55 2022            ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 23 22:45:15 2022            ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
 ; Family                             ; Cyclone III                                      ;
-; Total logic elements               ; 8,567                                            ;
-;     Total combinational functions  ; 7,863                                            ;
-;     Dedicated logic registers      ; 800                                              ;
-; Total registers                    ; 800                                              ;
-; Total pins                         ; 96                                               ;
+; Total logic elements               ; 0                                                ;
+;     Total combinational functions  ; 0                                                ;
+;     Dedicated logic registers      ; 0                                                ;
+; Total registers                    ; 0                                                ;
+; Total pins                         ; 91                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
@@ -160,107 +160,69 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
-;     Processors 5-8         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; div.v                            ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v              ;         ;
-; busmux_32_1.v                    ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v      ;         ;
-; register_32.v                    ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v      ;         ;
-; encoder.v                        ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v          ;         ;
-; datapath.v                       ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v         ;         ;
-; boothmul.v                       ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v         ;         ;
-; alu.v                            ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v              ;         ;
-; register_64.v                    ; yes             ; User Verilog HDL File        ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v      ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf                               ;         ;
-; addcore.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc                                   ;         ;
-; look_add.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc                                  ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                                  ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                                  ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                       ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                ;         ;
-; db/add_sub_gui.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/db/add_sub_gui.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
+; div.v                            ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v          ;         ;
+; busmux_32_1.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v  ;         ;
+; register_32.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v  ;         ;
+; encoder.v                        ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v      ;         ;
+; datapath.v                       ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v     ;         ;
+; boothmul.v                       ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v     ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v          ;         ;
+; register_64.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v  ;         ;
+; register_PC.v                    ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_PC.v  ;         ;
+; register_MDR.v                   ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_MDR.v ;         ;
+; bus.v                            ; yes             ; User Verilog HDL File  ; C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v          ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 8,567     ;
-;                                             ;           ;
-; Total combinational functions               ; 7863      ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2576      ;
-;     -- 3 input functions                    ; 5010      ;
-;     -- <=2 input functions                  ; 277       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3925      ;
-;     -- arithmetic mode                      ; 3938      ;
-;                                             ;           ;
-; Total registers                             ; 800       ;
-;     -- Dedicated logic registers            ; 800       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 96        ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 800       ;
-; Total fan-out                               ; 28447     ;
-; Average fan-out                             ; 3.21      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 91    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 91    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Library Name ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
-; |datapath                             ; 7863 (301)        ; 800 (0)      ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |datapath                                                     ; work         ;
-;    |BusMux_32_1:bus|                  ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|BusMux_32_1:bus                                     ; work         ;
-;    |alu:ALU|                          ; 7306 (266)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU                                             ; work         ;
-;       |boothmul:multiplication|       ; 3908 (3908)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|boothmul:multiplication                     ; work         ;
-;       |division:divisionModule|       ; 3067 (3067)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|division:divisionModule                     ; work         ;
-;       |lpm_add_sub:Add0|              ; 65 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|lpm_add_sub:Add0                            ; work         ;
-;          |add_sub_gui:auto_generated| ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:ALU|lpm_add_sub:Add0|add_sub_gui:auto_generated ; work         ;
-;    |encoder_32_5:encoder|             ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|encoder_32_5:encoder                                ; work         ;
-;    |register_32:HI|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:HI                                      ; work         ;
-;    |register_32:IR|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:IR                                      ; work         ;
-;    |register_32:LO|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:LO                                      ; work         ;
-;    |register_32:MDR|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:MDR                                     ; work         ;
-;    |register_32:PC|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:PC                                      ; work         ;
-;    |register_32:R0|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R0                                      ; work         ;
-;    |register_32:R10|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R10                                     ; work         ;
-;    |register_32:R11|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R11                                     ; work         ;
-;    |register_32:R12|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R12                                     ; work         ;
-;    |register_32:R13|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R13                                     ; work         ;
-;    |register_32:R14|                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R14                                     ; work         ;
-;    |register_32:R15|                  ; 33 (33)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R15                                     ; work         ;
-;    |register_32:R1|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R1                                      ; work         ;
-;    |register_32:R2|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R2                                      ; work         ;
-;    |register_32:R3|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R3                                      ; work         ;
-;    |register_32:R4|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R4                                      ; work         ;
-;    |register_32:R5|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R5                                      ; work         ;
-;    |register_32:R6|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R6                                      ; work         ;
-;    |register_32:R7|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R7                                      ; work         ;
-;    |register_32:R8|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R8                                      ; work         ;
-;    |register_32:R9|                   ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:R9                                      ; work         ;
-;    |register_32:Y|                    ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:Y                                       ; work         ;
-;    |register_32:inPort|               ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_32:inPort                                  ; work         ;
-;    |register_64:Z|                    ; 99 (99)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register_64:Z                                       ; work         ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |datapath                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 91   ; 0            ; |datapath           ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -269,124 +231,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 800   ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 800   ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R15|output_Q[15]                ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:PC|output_Q[27]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:HI|output_Q[27]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:LO|output_Q[2]                  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:IR|output_Q[28]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:MDR|output_Q[15]                ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:inPort|output_Q[6]              ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R7|output_Q[14]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R8|output_Q[31]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R9|output_Q[16]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R10|output_Q[12]                ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R11|output_Q[17]                ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R12|output_Q[9]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R13|output_Q[12]                ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R14|output_Q[1]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R3|output_Q[17]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R4|output_Q[12]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R5|output_Q[17]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R6|output_Q[16]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R1|output_Q[5]                  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R2|output_Q[0]                  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:R0|output_Q[26]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |datapath|register_32:Y|output_Q[9]                   ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |datapath|register_64:Z|output_Q[62]                  ;
-; 18:1               ; 30 bits   ; 360 LEs       ; 90 LEs               ; 270 LEs                ; Yes        ; |datapath|register_64:Z|output_Q[33]                  ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |datapath|BusMux_32_1:bus|Mux7                        ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector19  ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector61  ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector75  ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector116 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector146 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector177 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector215 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector249 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector280 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector316 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector325 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector359 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector405 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector427 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector456 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector509 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector531 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector568 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector600 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector619 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector646 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector702 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector712 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector759 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector797 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector823 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector851 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector880 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector897 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |datapath|alu:ALU|boothmul:multiplication|Selector934 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bus:bus_module|BusMux_32_1:busmux"                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: alu:ALU|lpm_add_sub:Add0 ;
-+------------------------+-------------+------------------------------------+
-; Parameter Name         ; Value       ; Type                               ;
-+------------------------+-------------+------------------------------------+
-; LPM_WIDTH              ; 32          ; Untyped                            ;
-; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                            ;
-; LPM_DIRECTION          ; DEFAULT     ; Untyped                            ;
-; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                            ;
-; LPM_PIPELINE           ; 0           ; Untyped                            ;
-; MAXIMIZE_SPEED         ; 5           ; Untyped                            ;
-; REGISTERED_AT_END      ; 0           ; Untyped                            ;
-; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                            ;
-; USE_CS_BUFFERS         ; 1           ; Untyped                            ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                            ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                 ;
-; DEVICE_FAMILY          ; Cyclone III ; Untyped                            ;
-; USE_WYS                ; OFF         ; Untyped                            ;
-; STYLE                  ; FAST        ; Untyped                            ;
-; CBXI_PARAMETER         ; add_sub_gui ; Untyped                            ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                         ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                       ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                       ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                     ;
-+------------------------+-------------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bus:bus_module"                                                                                                                                                     ;
++-----------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                                                                                                                                   ;
++-----------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; C_sign_extended ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "C_sign_extended[31..1]" will be connected to GND. ;
++-----------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "BusMux_32_1:bus"       ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
-; C_sign_extended ; Input ; Info     ; Stuck at GND ;
-+-----------------+-------+----------+--------------+
-
-
-+--------------------------------------------------+
-; Port Connectivity Checks: "encoder_32_5:encoder" ;
-+-------------+-------+----------+-----------------+
-; Port        ; Type  ; Severity ; Details         ;
-+-------------+-------+----------+-----------------+
-; Data[31..5] ; Input ; Info     ; Stuck at GND    ;
-+-------------+-------+----------+-----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_MDR:MDR"                                                                                                                             ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; read ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "read[31..1]" will be connected to GND. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -398,12 +277,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_32:IR"                                                                                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; output_Q ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "output_Q[31..1]" have no fanouts ;
+; output_Q ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:12     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -413,7 +302,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Feb 22 16:00:39 2022
+    Info: Processing started: Wed Feb 23 22:45:10 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPUProject -c CPUProject
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_tb.v
@@ -434,46 +323,158 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu
 Info (12021): Found 1 design units, including 1 entities, in source file register_64.v
     Info (12023): Found entity 1: register_64
+Info (12021): Found 1 design units, including 1 entities, in source file register_pc.v
+    Info (12023): Found entity 1: register_PC
+Info (12021): Found 1 design units, including 1 entities, in source file register_mdr.v
+    Info (12023): Found entity 1: register_MDR
+Info (12021): Found 1 design units, including 1 entities, in source file bus.v
+    Info (12023): Found entity 1: bus
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(79): created implicit net for "C_sign_extended"
 Info (12127): Elaborating entity "datapath" for the top level hierarchy
-Warning (10858): Verilog HDL warning at datapath.v(43): object Cout used but never assigned
-Warning (10030): Net "Cout" at datapath.v(43) has no driver or initial value, using a default initial value '0'
+Warning (10036): Verilog HDL or VHDL warning at datapath.v(38): object "ready" assigned a value but never read
 Info (12128): Elaborating entity "register_32" for hierarchy "register_32:R0"
-Info (12128): Elaborating entity "encoder_32_5" for hierarchy "encoder_32_5:encoder"
-Warning (10762): Verilog HDL Case Statement warning at encoder.v(6): can't check case statement for completeness because the case expression has too many possible states
-Info (10264): Verilog HDL Case Statement information at encoder.v(6): all case item expressions in this case statement are onehot
-Info (12128): Elaborating entity "BusMux_32_1" for hierarchy "BusMux_32_1:bus"
+Info (12128): Elaborating entity "register_PC" for hierarchy "register_PC:PC"
+Info (12128): Elaborating entity "register_MDR" for hierarchy "register_MDR:MDR"
 Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU"
 Info (12128): Elaborating entity "boothmul" for hierarchy "alu:ALU|boothmul:multiplication"
 Warning (10199): Verilog HDL Case Statement warning at boothmul.v(20): case item expression never matches the case expression
 Info (10264): Verilog HDL Case Statement information at boothmul.v(18): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "division" for hierarchy "alu:ALU|division:divisionModule"
 Info (12128): Elaborating entity "register_64" for hierarchy "register_64:Z"
-Info (278001): Inferred 1 megafunctions from design logic
-    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "alu:ALU|Add0"
-Info (12130): Elaborated megafunction instantiation "alu:ALU|lpm_add_sub:Add0"
-Info (12133): Instantiated megafunction "alu:ALU|lpm_add_sub:Add0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "32"
-    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_gui.tdf
-    Info (12023): Found entity 1: add_sub_gui
-Info (286030): Timing-Driven Synthesis is running
+Info (12128): Elaborating entity "bus" for hierarchy "bus:bus_module"
+Warning (10036): Verilog HDL or VHDL warning at bus.v(8): object "ready" assigned a value but never read
+Info (12128): Elaborating entity "encoder_32_5" for hierarchy "bus:bus_module|encoder_32_5:encoder"
+Warning (10762): Verilog HDL Case Statement warning at encoder.v(13): can't check case statement for completeness because the case expression has too many possible states
+Info (10264): Verilog HDL Case Statement information at encoder.v(13): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "BusMux_32_1" for hierarchy "bus:bus_module|BusMux_32_1:busmux"
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(19): variable "BusMuxIn_R0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(20): variable "BusMuxIn_R1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(21): variable "BusMuxIn_R2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(22): variable "BusMuxIn_R3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(23): variable "BusMuxIn_R4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(24): variable "BusMuxIn_R5" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(25): variable "BusMuxIn_R6" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(26): variable "BusMuxIn_R7" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(27): variable "BusMuxIn_R8" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(28): variable "BusMuxIn_R9" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(29): variable "BusMuxIn_R10" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(30): variable "BusMuxIn_R11" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(31): variable "BusMuxIn_R12" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(32): variable "BusMuxIn_R13" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(33): variable "BusMuxIn_R14" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(34): variable "BusMuxIn_R15" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(35): variable "BusMuxIn_HI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(36): variable "BusMuxIn_LO" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(37): variable "BusMuxIn_ZHI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(38): variable "BusMuxIn_ZLOW" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(39): variable "BusMuxIn_PC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(40): variable "BusMuxIn_MDR" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(41): variable "BusMuxIn_InPort" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at busmux_32_1.v(42): variable "C_sign_extended" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (144001): Generated suppressed messages file C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/output_files/CPUProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 91 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "clr"
+    Warning (15610): No output dependent on input pin "r0_in"
+    Warning (15610): No output dependent on input pin "r1_in"
+    Warning (15610): No output dependent on input pin "r2_in"
+    Warning (15610): No output dependent on input pin "r3_in"
+    Warning (15610): No output dependent on input pin "r4_in"
+    Warning (15610): No output dependent on input pin "r5_in"
+    Warning (15610): No output dependent on input pin "r6_in"
+    Warning (15610): No output dependent on input pin "r7_in"
+    Warning (15610): No output dependent on input pin "r8_in"
+    Warning (15610): No output dependent on input pin "r9_in"
+    Warning (15610): No output dependent on input pin "r10_in"
+    Warning (15610): No output dependent on input pin "r11_in"
+    Warning (15610): No output dependent on input pin "r12_in"
+    Warning (15610): No output dependent on input pin "r13_in"
+    Warning (15610): No output dependent on input pin "r14_in"
+    Warning (15610): No output dependent on input pin "r15_in"
+    Warning (15610): No output dependent on input pin "PC_in"
+    Warning (15610): No output dependent on input pin "Inc_PC"
+    Warning (15610): No output dependent on input pin "IR_in"
+    Warning (15610): No output dependent on input pin "Y_in"
+    Warning (15610): No output dependent on input pin "Z_in"
+    Warning (15610): No output dependent on input pin "HI_in"
+    Warning (15610): No output dependent on input pin "LO_in"
     Warning (15610): No output dependent on input pin "MAR_in"
+    Warning (15610): No output dependent on input pin "MDR_in"
+    Warning (15610): No output dependent on input pin "read"
+    Warning (15610): No output dependent on input pin "inPort_in"
+    Warning (15610): No output dependent on input pin "r0out"
+    Warning (15610): No output dependent on input pin "r1out"
+    Warning (15610): No output dependent on input pin "r2out"
+    Warning (15610): No output dependent on input pin "r3out"
+    Warning (15610): No output dependent on input pin "r4out"
+    Warning (15610): No output dependent on input pin "r5out"
+    Warning (15610): No output dependent on input pin "r6out"
+    Warning (15610): No output dependent on input pin "r7out"
+    Warning (15610): No output dependent on input pin "r8out"
+    Warning (15610): No output dependent on input pin "r9out"
+    Warning (15610): No output dependent on input pin "r10out"
+    Warning (15610): No output dependent on input pin "r11out"
+    Warning (15610): No output dependent on input pin "r12out"
+    Warning (15610): No output dependent on input pin "r13out"
+    Warning (15610): No output dependent on input pin "r14out"
+    Warning (15610): No output dependent on input pin "r15out"
+    Warning (15610): No output dependent on input pin "PCout"
+    Warning (15610): No output dependent on input pin "ZLOWout"
+    Warning (15610): No output dependent on input pin "ZHIout"
+    Warning (15610): No output dependent on input pin "LOout"
+    Warning (15610): No output dependent on input pin "HIout"
+    Warning (15610): No output dependent on input pin "MDRout"
+    Warning (15610): No output dependent on input pin "IRout"
+    Warning (15610): No output dependent on input pin "inPortout"
+    Warning (15610): No output dependent on input pin "Cout"
+    Warning (15610): No output dependent on input pin "ALU_select[0]"
+    Warning (15610): No output dependent on input pin "ALU_select[1]"
+    Warning (15610): No output dependent on input pin "ALU_select[2]"
+    Warning (15610): No output dependent on input pin "ALU_select[3]"
     Warning (15610): No output dependent on input pin "ALU_select[4]"
-Info (21057): Implemented 8695 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 64 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 8599 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 434 megabytes
-    Info: Processing ended: Tue Feb 22 16:00:55 2022
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:15
+    Warning (15610): No output dependent on input pin "MdataIn[0]"
+    Warning (15610): No output dependent on input pin "MdataIn[1]"
+    Warning (15610): No output dependent on input pin "MdataIn[2]"
+    Warning (15610): No output dependent on input pin "MdataIn[3]"
+    Warning (15610): No output dependent on input pin "MdataIn[4]"
+    Warning (15610): No output dependent on input pin "MdataIn[5]"
+    Warning (15610): No output dependent on input pin "MdataIn[6]"
+    Warning (15610): No output dependent on input pin "MdataIn[7]"
+    Warning (15610): No output dependent on input pin "MdataIn[8]"
+    Warning (15610): No output dependent on input pin "MdataIn[9]"
+    Warning (15610): No output dependent on input pin "MdataIn[10]"
+    Warning (15610): No output dependent on input pin "MdataIn[11]"
+    Warning (15610): No output dependent on input pin "MdataIn[12]"
+    Warning (15610): No output dependent on input pin "MdataIn[13]"
+    Warning (15610): No output dependent on input pin "MdataIn[14]"
+    Warning (15610): No output dependent on input pin "MdataIn[15]"
+    Warning (15610): No output dependent on input pin "MdataIn[16]"
+    Warning (15610): No output dependent on input pin "MdataIn[17]"
+    Warning (15610): No output dependent on input pin "MdataIn[18]"
+    Warning (15610): No output dependent on input pin "MdataIn[19]"
+    Warning (15610): No output dependent on input pin "MdataIn[20]"
+    Warning (15610): No output dependent on input pin "MdataIn[21]"
+    Warning (15610): No output dependent on input pin "MdataIn[22]"
+    Warning (15610): No output dependent on input pin "MdataIn[23]"
+    Warning (15610): No output dependent on input pin "MdataIn[24]"
+    Warning (15610): No output dependent on input pin "MdataIn[25]"
+    Warning (15610): No output dependent on input pin "MdataIn[26]"
+    Warning (15610): No output dependent on input pin "MdataIn[27]"
+    Warning (15610): No output dependent on input pin "MdataIn[28]"
+    Warning (15610): No output dependent on input pin "MdataIn[29]"
+    Warning (15610): No output dependent on input pin "MdataIn[30]"
+    Warning (15610): No output dependent on input pin "MdataIn[31]"
+Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 91 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 122 warnings
+    Info: Peak virtual memory: 381 megabytes
+    Info: Processing ended: Wed Feb 23 22:45:15 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+

@@ -1,0 +1,196 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do CPUProject_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module division
+# 
+# Top level modules:
+# 	division
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module BusMux_32_1
+# 
+# Top level modules:
+# 	BusMux_32_1
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register_32
+# 
+# Top level modules:
+# 	register_32
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module encoder_32_5
+# 
+# Top level modules:
+# 	encoder_32_5
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module boothmul
+# 
+# Top level modules:
+# 	boothmul
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register_64
+# 
+# Top level modules:
+# 	register_64
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_PC.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register_PC
+# 
+# Top level modules:
+# 	register_PC
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_MDR.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register_MDR
+# 
+# Top level modules:
+# 	register_MDR
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module bus
+# 
+# Top level modules:
+# 	bus
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module datapath_tb
+# 
+# Top level modules:
+# 	datapath_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  datapath_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps datapath_tb 
+# Loading work.datapath_tb
+# Loading work.datapath
+# Loading work.register_32
+# Loading work.register_PC
+# Loading work.register_MDR
+# Loading work.alu
+# Loading work.boothmul
+# Loading work.division
+# Loading work.register_64
+# Loading work.bus
+# Loading work.encoder_32_5
+# Loading work.BusMux_32_1
+# ** Warning: (vsim-3017) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Too few port connections. Expected 56, found 20.
+# 
+#         Region: /datapath_tb/DUT
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'clr'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r0_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r1_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r3_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r6_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r7_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r8_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r9_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r10_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r11_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r12_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r13_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r14_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r15_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'HI_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'LO_in'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r0out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r1out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r3out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r5out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r6out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r7out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r8out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r9out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r10out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r11out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r12out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r13out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r14out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'r15out'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'ZHIout'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'LOout'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'HIout'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'IRout'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'inPortout'.
+# 
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(40): [TFMPC] - Missing connection for port 'Cout'.
+# 
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(58): [PCDPC] - Port size (32 or 32) does not match connection size (1) for port 'output_Q'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v(7).
+# 
+#         Region: /datapath_tb/DUT/IR
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(62): [PCDPC] - Port size (32 or 32) does not match connection size (1) for port 'read'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_MDR.v(6).
+# 
+#         Region: /datapath_tb/DUT/MDR
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(83): [PCDPC] - Port size (32 or 32) does not match connection size (1) for port 'C_sign_extended'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(3).
+# 
+#         Region: /datapath_tb/DUT/bus_module
+# ** Warning: (vsim-3017) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(18): [TFMPC] - Too few port connections. Expected 27, found 26.
+# 
+#         Region: /datapath_tb/DUT/bus_module/busmux
+# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(18): [TFMPC] - Missing connection for port 'clk'.
+# 
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 500 ns

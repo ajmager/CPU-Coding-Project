@@ -1,0 +1,94 @@
+//Bus
+module bus(
+input [31:0] r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended; 
+input r0out, r1out, r2out, r3out, r4out, r5out, r6out, r7out, r8out, r9out, r10out, r11out, r12out, r13out, r14out, r15out, HIout, LOout, ZHIout, ZLOWout, PCout, MDRout, inPortout;
+output [31:0] BUS_data;
+);
+always @ (*) begin
+	if (r0out) begin
+		ready <= 32'h01;
+	end
+	if (r1out) begin
+		ready <= 32'h02;
+	end
+	if (r2out) begin
+		ready <= 32'h04;
+	end	
+	if (r3out) begin
+		ready <= 32'h08;
+	end
+	if (r4out) begin
+		ready <= 32'h10;
+	end
+	if (r5out) begin
+		ready <= 32'h20;
+	end
+	if (r6out) begin
+		ready <= 32'h40;
+	end
+	if (r7out) begin
+		ready <= 32'h80;
+	end
+	if (r8out) begin
+		ready <= 32'h100;
+	end
+	if (r9out) begin
+		ready <= 32'h200;
+	end
+	if (r10out) begin
+		ready <= 32'h400;
+	end
+	if (r11out) begin
+		ready <= 32'h800;
+	end
+	if (r12out) begin
+		ready <= 32'h1000;
+	end
+	if (r13out) begin
+		ready <= 32'h2000;
+	end
+	if (r14out) begin
+		ready <= 32'h4000;
+	end
+	if (r15out) begin
+		ready <= 32'h8000;
+	end
+	if (PCout) begin
+		ready <= 32'h10000;
+	end
+	if (HIout) begin
+		ready <= 32'h20000;
+	end
+	if (LOout) begin
+		ready <= 32'h40000;
+	end
+	if (IRout) begin
+		ready <= 32'h80000;
+	end
+	if (ZHIout) begin
+		ready <= 32'h100000;
+	end	
+	if (ZLOWout) begin
+		ready <= 32'h200000;
+	end
+	if (MDRout) begin
+		ready <= 32'h400000;
+	end
+	if	(inPortout) begin
+		ready <= 32'h800000;
+	end
+	if	(Cout) begin
+		ready <= 32'h1000000;
+	end
+end
+
+wire[4:0] select;
+	
+//Encoder - select signals S0 - S4
+encoder_32_5 encoder(select, ready);
+	
+//assign C_sign_extended = {14{IR_out[17]}, IR_out [17:0]};
+	
+//Bus
+BusMux_32_1 busmux(BUS_data, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended, select); 
+	

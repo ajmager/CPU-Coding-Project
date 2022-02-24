@@ -1,5 +1,5 @@
 Flow report for CPUProject
-Tue Feb 22 16:02:39 2022
+Wed Feb 23 22:45:42 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Tue Feb 22 16:02:39 2022            ;
+; Flow Status                        ; Successful - Wed Feb 23 22:45:42 2022            ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
 ; Family                             ; Cyclone III                                      ;
 ; Device                             ; EP3C16F484C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 8,284 / 15,408 ( 54 % )                          ;
-;     Total combinational functions  ; 7,863 / 15,408 ( 51 % )                          ;
-;     Dedicated logic registers      ; 800 / 15,408 ( 5 % )                             ;
-; Total registers                    ; 800                                              ;
-; Total pins                         ; 96 / 347 ( 28 % )                                ;
+; Total logic elements               ; 0 / 15,408 ( 0 % )                               ;
+;     Total combinational functions  ; 0 / 15,408 ( 0 % )                               ;
+;     Dedicated logic registers      ; 0 / 15,408 ( 0 % )                               ;
+; Total registers                    ; 0                                                ;
+; Total pins                         ; 91 / 347 ( 26 % )                                ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                              ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                                  ;
@@ -64,30 +64,37 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/22/2022 16:00:41 ;
+; Start date & time ; 02/23/2022 22:45:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CPUProject          ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589188.164556364101544 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)             ; <None>        ; --          ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                           ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                           ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; datapath    ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; datapath    ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; datapath    ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; datapath                       ; CPUProject    ; --          ; --             ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++--------------------------------------+--------------------------------+---------------+-------------+----------------+
+; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id     ;
++--------------------------------------+--------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                ; 10995770589188.164567431313940 ; --            ; --          ; --             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                             ; --            ; --          ; datapath_tb    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; datapath_tb                    ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                  ; datapath_tb.v                  ; --            ; --          ; datapath_tb    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; datapath_tb                    ; --            ; --          ; datapath_tb    ;
+; EDA_TEST_BENCH_NAME                  ; datapath_tb                    ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                         ; --            ; --          ; datapath_tb    ;
+; EDA_TIME_SCALE                       ; 1 ps                           ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                             ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                              ; --            ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                           ; --            ; --          ; --             ;
+; PARTITION_COLOR                      ; 16764057                       ; --            ; datapath    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING          ; --            ; datapath    ; Top            ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                         ; --            ; datapath    ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                   ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                     ; datapath                       ; CPUProject    ; --          ; --             ;
++--------------------------------------+--------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -95,12 +102,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 434 MB              ; 00:00:14                           ;
-; Fitter                    ; 00:01:11     ; 2.9                     ; 718 MB              ; 00:02:08                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 374 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 2.5                     ; 505 MB              ; 00:00:14                           ;
-; EDA Netlist Writer        ; 00:00:10     ; 1.0                     ; 381 MB              ; 00:00:09                           ;
-; Total                     ; 00:01:51     ; --                      ; --                  ; 00:02:47                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 373 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 612 MB              ; 00:00:08                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 362 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 381 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 322 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
