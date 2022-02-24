@@ -6,7 +6,7 @@ entity register_PC is
         clr             : in     vl_logic;
         enable          : in     vl_logic;
         IncPC           : in     vl_logic;
-        input_D         : in     vl_logic_vector(31 downto 0);
-        output_Q        : out    vl_logic_vector(31 downto 0)
+        input_DPC       : in     vl_logic_vector(31 downto 0);
+        output_QPC      : out    vl_logic_vector(31 downto 0)
     );
 end register_PC;

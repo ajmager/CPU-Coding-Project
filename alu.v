@@ -1,18 +1,19 @@
 module alu(
            input [31:0] A,B,  // ALU 31-bit Inputs
-           input [4:0] ALU_Sel,// ALU Selection
+			  input clk,
+           input [3:0] ALU_Sel,// ALU Selection
            output [63:0] ALU_Out // ALU 64-bit Output
     );
     reg [63:0] ALU_Result;
-    assign ALU_Out = ALU_Result; // ALU out
 	 reg [31:0] zeros = 32'h00000000;
 	 
 	 wire [63:0] tempMulOut;
 	 wire [63:0] tempDivOut;
+	 assign ALU_Out = ALU_Result; // ALU out
 	 boothmul multiplication(A, B, tempMulOut);
 	 division divisionModule(A, B, tempDivOut);
 	 
-    always @(*)
+    always @(posedge clk)
     begin
         case(ALU_Sel)
         0 : // Addition

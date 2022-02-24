@@ -3,17 +3,25 @@
 module register_64(
 
 	input						clk, clr, enable,
-	input			[63:0]	input_D,
-	output reg	[63:0]	output_Q
+	input 					Zhi, Zlow,
+	input			[63:0]	input_DZ,
+	output reg	[31:0]	output_QZ
 );
 
 always @ (posedge clk) begin
 
 if (clr) begin
-	output_Q = 0;
+	output_QZ <= 64'h0000000000000000;
 end
 else if (enable) begin
-	output_Q = input_D;
+	
+	if(Zlow)begin
+		output_QZ <= input_DZ [31:0];
+	end
+	
+	else if(Zhi) begin
+		output_QZ <= input_DZ [63:32];
+	end
 end
 
 end

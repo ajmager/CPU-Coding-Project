@@ -1,14 +1,14 @@
 //datapath.v
 module datapath (
-input clk, clr, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in,
-input PC_in, Inc_PC, IR_in, Y_in, Z_in, HI_in, LO_in,
-input MAR_in, MDR_in, read, 
-input inPort_in,
-input r0out, r1out, r2out, r3out, r4out, r5out, r6out, r7out, r8out, r9out, r10out, r11out, r12out, r13out, r14out, r15out,
-input PCout, ZLOWout, ZHIout, LOout, HIout, MDRout, IRout, inPortout, Cout,
-input [4:0] ALU_select,
-input [31:0] MdataIn
-//output[31:0] BusMuxData_out
+input clk, clr, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in,	//Input Signals
+input PC_in, Inc_PC, IR_in, Y_in, Z_in, HI_in, LO_in,	//Input signals
+input MAR_in, MDR_in, read, //Input Signals
+input inPort_in,	//Input Signal
+input r0out, r1out, r2out, r3out, r4out, r5out, r6out, r7out, r8out, r9out, r10out, r11out, r12out, r13out, r14out, r15out,	//Output Signals
+input PCout, ZLOWout, ZHIout, LOout, HIout, MDRout, IRout, inPortout, Cout,	//Output Signals
+input [3:0] ALU_select,
+input [31:0] MdataIn,
+output[31:0] ALU_out
 );
 
 	//data out wires
@@ -22,18 +22,14 @@ input [31:0] MdataIn
 	wire IR_out;	
 	wire [31:0] Y_out;	//to ALU
 	wire [63:0] Z_out;	//out of Z register into Zlow/Zhi
-	
-	wire [31:0] ZHI_out;	//Out from Z
-	wire [31:0] ZLOW_out;//Out from Z
 	wire [31:0] MAR_out;	//To memory chip
 	wire [31:0] MDR_out;	//To memory chip
 	wire [31:0] outPort_out;	//To I/O Units
 	wire [31:0] inPort_out; //to itself
 	wire [31:0] C_out;
 	
-	wire [31:0] BUS_data;
 	
-	//assign BUS_data [31:0] = MdataIn [31:0];
+	wire [31:0] BUS_data;
 	
 	integer ready = 5'b00000;
 	
@@ -65,15 +61,12 @@ input [31:0] MdataIn
 	register_32 LO(clk, clr, LO_in, BUS_data, LO_out);
 	
 	register_32 Y(clk, clr, Y_in, BUS_data, Y_out); 
+	register_64 Z(clk, clr, Z_in,ZHIoutout, ZLOWout, ALU_out, Z_out);
 	
 	
-	wire [63:0] ALU_out;
 	//ALU
-	alu ALU(Y_out, BUS_data, ALU_select, ALU_out);
-	register_64 Z(clk, clr, Z_in, ALU_out, Z_out);
-		
-	assign ZLOW_out = Z_out[31:0];
-	assign ZHI_out = Z_out[63:32];
+	alu ALU(Y_out, BUS_data, clk, ALU_select, ALU_out);
+	
 	
 	bus bus_module(
 		r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out, r10_out, r11_out, r12_out, r13_out, r14_out, r15_out, HI_out, LO_out, ZHI_out, ZLOW_out, PC_out, MDR_out, inPort_out, C_sign_extended,
@@ -81,6 +74,5 @@ input [31:0] MdataIn
 		BUS_data,
 		clk
 	);
-	
 	
 endmodule

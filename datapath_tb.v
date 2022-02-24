@@ -10,6 +10,7 @@ module datapath_tb;
 	reg [4:0] ALU_select;
 	reg Clock;
 	reg [31:0] Mdatain;
+	wire [31:0] OutputData; 
 	
 	parameter Default = 4'b0000, Reg_load1a = 4'b0001, Reg_load1b = 4'b0010, Reg_load2a = 4'b0011, Reg_load2b = 4'b0100, Reg_load3a = 4'b0101, Reg_load3b = 4'b0110, T0 = 4'b0111, T1 = 4'b1000, T2 = 4'b1001, T3 = 4'b1010, T4 = 4'b1011, T5 = 4'b1100;
 	
@@ -36,7 +37,8 @@ module datapath_tb;
 		.MDRout(MDRout),
 		.inPort_in(inPortin),
 		.ALU_select(ALU_select),
-		.MdataIn(Mdatain)
+		.MdataIn(Mdatain),
+		.ALU_out(OutputData)
 	);
 //add test logic here
 initial
@@ -118,7 +120,7 @@ begin
 							R2out<=1;	Yin<=1;
 		end
 		T4: begin
-							R4out<=1;	ALU_select<=5'b00100;	Zin<=1;   // opcode hardco
+							R4out<=1;	ALU_select<=4'b0100;	Zin<=1;   // opcode hardco
 		end
 		T5: begin
 							Zlowout<=1;	R5in<=1;
