@@ -14,7 +14,7 @@ integer i;
 alu test(
 	A,B,
 	ALU_Select,
-	ALU_Out,
+	ALU_Out
 	//CarryOut	
 );
 initial begin
