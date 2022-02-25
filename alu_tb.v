@@ -2,11 +2,11 @@
 
 module alu_tb;
 
-input [31:0] A, B;
-input [4:0] ALU_Select;
-input clk; 
+reg [31:0] A, B;
+reg [4:0] ALU_Select;
+reg clk; 
 
-output [63:0] ALU_Out;
+wire [63:0] ALU_Out;
 //wire CarryOut; 
 
 integer i; 
