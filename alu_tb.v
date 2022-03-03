@@ -8,6 +8,7 @@ reg clk;
 
 wire [63:0] ALU_Out;
 
+
 integer i; 
 
 alu test(
@@ -19,7 +20,7 @@ alu test(
 initial begin
 	A <= 8'h22;
 	B <= 8'h24;
-	ALU_Sel <= 4'b0100;
+	ALU_Sel <= 4'b0101;
 	
 	for (i = 0; i <= 13; i = i + 1)
 	begin	
