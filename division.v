@@ -29,10 +29,10 @@ module division(Dividend, Divisor, Z);
 				a[0] = 1; 
 		end
 		Q = a; 
-		R = Dividend - Q; 
+		
+		R = Dividend - Q*Divisor; 
+		
 		Z[63:32] = Q;
 		Z[31:0] = R; 
 	end
 endmodule
-				
-	
