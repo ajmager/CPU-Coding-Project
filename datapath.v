@@ -8,7 +8,8 @@ input r0out, r1out, r2out, r3out, r4out, r5out, r6out, r7out, r8out, r9out, r10o
 input PCout, ZLOWout, ZHIout, LOout, HIout, MDRout, inPortout, Cout,	//Output Signals
 input [3:0] ALU_select,
 input [31:0] MdataIn,
-output[63:0] ALU_out
+output[63:0] ALU_out,
+output [31:0] BUS_data
 );
 
 	//data out wires
@@ -29,7 +30,7 @@ output[63:0] ALU_out
 	wire [31:0] C_out;
 	
 	
-	wire [31:0] BUS_data;
+	//wire [31:0] BUS_data;
 	
 	//32 bit Register setup
 	register_32 R0(clk, clr, r0_in, BUS_data, r0_out);

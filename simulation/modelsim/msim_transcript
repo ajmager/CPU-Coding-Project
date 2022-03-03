@@ -98,24 +98,19 @@
 # Loading work.bus
 # Loading work.encoder_32_5
 # Loading work.BusMux_32_1
-# ** Warning: (vsim-3017) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(86): [TFMPC] - Too few port connections. Expected 56, found 55.
-# 
-#         Region: /datapath_tb/DUT
-# ** Warning: (vsim-3722) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v(86): [TFMPC] - Missing connection for port 'clr'.
-# 
-# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(52): [PCDPC] - Port size (32 or 32) does not match connection size (1) for port 'output_Q32'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v(7).
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(53): [PCDPC] - Port size (32 or 32) does not match connection size (1) for port 'output_Q32'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v(7).
 # 
 #         Region: /datapath_tb/DUT/IR
-# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(62): [PCDPC] - Port size (32 or 32) does not match connection size (64) for port 'output_QZ'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v(8).
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(63): [PCDPC] - Port size (32 or 32) does not match connection size (64) for port 'output_QZ'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v(8).
 # 
 #         Region: /datapath_tb/DUT/Z
-# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(74): [PCDPC] - Port size (32 or 32) does not match connection size (64) for port 'ZHI_out'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(3).
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(75): [PCDPC] - Port size (32 or 32) does not match connection size (64) for port 'ZHI_out'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(3).
 # 
 #         Region: /datapath_tb/DUT/bus_module
-# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(74): [PCDPC] - Port size (32 or 32) does not match connection size (64) for port 'ZLOW_out'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(3).
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(75): [PCDPC] - Port size (32 or 32) does not match connection size (64) for port 'ZLOW_out'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(3).
 # 
 #         Region: /datapath_tb/DUT/bus_module
-# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(74): [PCDPC] - Port size (32 or 32) does not match connection size (1) for port 'C_sign_extended'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(3).
+# ** Warning: (vsim-3015) C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v(75): [PCDPC] - Port size (32 or 32) does not match connection size (1) for port 'C_sign_extended'. The port definition is at: C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v(3).
 # 
 #         Region: /datapath_tb/DUT/bus_module
 # 
@@ -125,6 +120,3 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 500 ns
-# Error opening C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/simulation/modelsim/[PCDPC] - Port size (32 or 32) does not match connection size 
-# Path name 'C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/simulation/modelsim/[PCDPC] - Port size (32 or 32) does not match connection size ' doesn't exist.
-# A time value could not be extracted from the current line
