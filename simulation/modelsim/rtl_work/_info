@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\Users\prana\OneDrive\Desktop\Personal\QueensU\3rd Year\Sem 2\ELEC 374\374\simulation\modelsim
 valu
-IoRF:F?I@7d8UABC=36D`k2
+IBoSbBN?coU>h2mji<WM0Q0
 VU@UD7GzfMSTIDYfm8Zl^j1
 Z1 dC:\Users\prana\OneDrive\Desktop\Personal\QueensU\3rd Year\Sem 2\ELEC 374\374\simulation\modelsim
-w1645741524
+w1646274057
 8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v
 FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v
 L0 1
@@ -17,9 +17,9 @@ r1
 Z3 o-vlog01compat -work work -O0
 Z4 !s92 -vlog01compat -work work {+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374} -O0
 !i10b 1
-!s100 iGo9K60V0ZKm9TZ42^:lE2
+!s100 :@4TNWmKoD;HDOER4RPSQ3
 !s85 0
-!s108 1645744378.493000
+!s108 1646282763.030000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/alu.v|
 !s101 -O0
@@ -39,15 +39,15 @@ R4
 !i10b 1
 !s100 B7Bi6bjYCE@87loK9e0Q91
 !s85 0
-!s108 1645744378.337000
+!s108 1646282762.880000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/boothmul.v|
 !s101 -O0
 vbus
-I;G4J`KDc88S31o<Y18>nd1
+I3>N=md@6J;>9IRIkQA]z=0
 VMIM_D_UX?BQce_;mLch5N1
 R1
-w1645743811
+w1646278470
 8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v
 FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v
 L0 2
@@ -57,17 +57,17 @@ r1
 R3
 R4
 !i10b 1
-!s100 TWc`@OzRF>009IYN3WOGB1
+!s100 ]eiC6;WgL85PzjN1ModlN2
 !s85 0
-!s108 1645744379.139000
+!s108 1646282764.147000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v|
 !s101 -O0
 vBusMux_32_1
-InR0YMcbiAK2I<zY6jBomH0
+IRAGDgPBzzj1Tj8EWm?b0z2
 VOBPcee03<@gOYmYKzIlN43
 R1
-Z5 w1645674202
+w1646271147
 8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v
 FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v
 L0 3
@@ -75,20 +75,20 @@ R2
 r1
 31
 R3
-R4
 n@bus@mux_32_1
+R4
 !i10b 1
-!s100 =XT49oe2TRI>0<A@YW=oc0
+!s100 <RY:AbEM?bmhN4b5>ZjEC0
 !s85 0
-!s108 1645744377.686000
+!s108 1646282762.242000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v|
 !s101 -O0
 vdatapath
-IIZa4koRJG@95YRJLUXIce1
-Vl5Ng8c^]30^^h;XzG:Ob=2
+I@NOFl6KghJ>b:V2_:fbI?0
+V4zIYJR[HLWWUimfa61e@[2
 R1
-w1645743810
+w1646277758
 8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v
 FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v
 L0 2
@@ -98,19 +98,19 @@ r1
 R3
 R4
 !i10b 1
-!s100 KL8PP7egZNRl_X6Mhej?[0
+!s100 F^0<LiABS`l@UMS3en4L?1
 !s85 0
-!s108 1645744378.163000
+!s108 1646282762.724000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath.v|
 !s101 -O0
 vdatapath_tb
 !i10b 1
-!s100 ihN=jjNKfBM6NKzOQ_2lh3
-IiNhW4H?@X0c1EKc^I7Mn13
+!s100 [91JD7lIlDFV2z]Y[R4og1
+I<h?n:nP_nMkY]NzXdj>:>0
 Vg^M0jT^eTJTRPdF4JcHC=0
 R1
-w1645744081
+w1646278797
 8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v
 FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v
 L0 3
@@ -118,19 +118,19 @@ R2
 r1
 !s85 0
 31
-!s108 1645744379.301000
+!s108 1646282764.466000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v|
 !s101 -O0
 R3
 R4
 vdivision
-IK]aU_TIJ5bda6d=S9P_LY0
+IMO4S5D8aW[?P61@7MQYE[3
 V_Lli0lW4iLT55moKflL1@1
 R1
-w1645132206
-8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v
-FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v
+w1646261268
+8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/division.v
+FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/division.v
 L0 1
 R2
 r1
@@ -138,17 +138,17 @@ r1
 R3
 R4
 !i10b 1
-!s100 g@zATD6LOXjX2gB=1kMR23
+!s100 2NW^7YeCLZ>EUiLeAXc<63
 !s85 0
-!s108 1645744377.469000
-!s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v|
+!s108 1646282764.310000
+!s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/division.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/division.v|
 !s101 -O0
 vencoder_32_5
 IgU>]JnfEnE]E`zmd@5?dQ1
 V7i99M9COKQ6?]X[GI<KR02
 R1
-R5
+w1645674202
 8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v
 FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v
 L0 3
@@ -160,7 +160,7 @@ R4
 !i10b 1
 !s100 9iR5zaU0olfK^D>5`]0>81
 !s85 0
-!s108 1645744378.007000
+!s108 1646282762.568000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v|
 !s101 -O0
@@ -180,7 +180,7 @@ R4
 !i10b 1
 !s100 giPn3b[l0]iK5AXY@JDmI3
 !s85 0
-!s108 1645744377.849000
+!s108 1646282762.416000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v|
 !s101 -O0
@@ -188,7 +188,7 @@ vregister_64
 I`;?NHeY0cQJhKcXoPIHTf0
 Vi13nk[@iP:[SIkf22RJ]A2
 R1
-w1645742557
+w1646276909
 8C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v
 FC:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v
 L0 3
@@ -200,7 +200,7 @@ R4
 !i10b 1
 !s100 _h[ckW1lBeM@aLafzaMd?3
 !s85 0
-!s108 1645744378.657000
+!s108 1646282763.682000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_64.v|
 !s101 -O0
@@ -221,7 +221,7 @@ nregister_@m@d@r
 !i10b 1
 !s100 CiJ7b4NTkE?[o3o]k>NHR1
 !s85 0
-!s108 1645744378.979000
+!s108 1646282763.997000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_MDR.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_MDR.v|
 !s101 -O0
@@ -242,7 +242,7 @@ nregister_@p@c
 !i10b 1
 !s100 h84aMdAPDLGInLdhEm;Rd2
 !s85 0
-!s108 1645744378.823000
+!s108 1646282763.842000
 !s107 C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_PC.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374|C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_PC.v|
 !s101 -O0

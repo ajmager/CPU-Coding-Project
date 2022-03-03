@@ -15,7 +15,7 @@ end
 else if (enable) begin
 	output_QPC <= input_DPC;
 end
-else if(IncPC) begin
+else if(IncPC && enable) begin
 	output_QPC <= output_QPC + 1;
 end
 end

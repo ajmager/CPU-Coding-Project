@@ -5,7 +5,6 @@ module bus(
 	output [31:0] BUS_data,
 	input clk
 );
-	integer ready = 32'hx;
 
 	wire[4:0] select;
 		

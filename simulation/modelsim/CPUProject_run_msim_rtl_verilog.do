@@ -5,7 +5,6 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/div.v}
 vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/busmux_32_1.v}
 vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_32.v}
 vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/encoder.v}
@@ -16,6 +15,7 @@ vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/Q
 vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_PC.v}
 vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/register_MDR.v}
 vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/bus.v}
+vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/division.v}
 
 vlog -vlog01compat -work work +incdir+C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd\ Year/Sem\ 2/ELEC\ 374/374 {C:/Users/prana/OneDrive/Desktop/Personal/QueensU/3rd Year/Sem 2/ELEC 374/374/datapath_tb.v}
 

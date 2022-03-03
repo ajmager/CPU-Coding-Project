@@ -1,11 +1,9 @@
 module alu(
-        input [31:0] A,B,  // ALU 31-bit Inputs
+	input signed [31:0] A,B,  // ALU 31-bit Inputs
 	input clk,
-        input [3:0] ALU_Sel,// ALU Selection
-        output [63:0] ALU_Out // ALU 64-bit Output
-    );
-    	reg [63:0] ALU_Result;
-	reg [31:0] zeros = 32'h00000000;
+	input [3:0] ALU_Sel,// ALU Selection
+	output [63:0] ALU_Out // ALU 64-bit Output
+);
 	 
 	wire [63:0] tempMulOut;
 	wire [63:0] tempDivOut;
@@ -41,11 +39,11 @@ module alu(
         4'b0111 : // shift left
            		RLo <= A<<B;
         4'b1000 : // shift right
-           		RLo <= A>>B; 
+           		RLo <= A>>B;
         4'b1001 : // rotate left
-			RLo <= {A[30:0],A[31]};
+					RLo <= 32'b0;//{A[30:0],A[31]};
         4'b1010 : // rotate right
-			RLo <= {A[0],A[31:1]};
+					RLo <= 32'b0;//{A[0],A[31:1]};
         4'b1011 : // negate
            		RLo <= ~B+1; 
         4'b1100 : // XOR   
@@ -55,7 +53,7 @@ module alu(
         4'b1110 : //NAND
 			RLo <= ~(A & B);
                            
-          default: ALU_Result = 64'bx ; 
-        endcase
+        default: RLo = 32'bx; 
+       endcase
     end
 endmodule
