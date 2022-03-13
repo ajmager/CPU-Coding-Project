@@ -6,7 +6,7 @@ module inport(
   
  always @ (posedge clk) begin
   if (clr) begin
-	  outUnit <= 32'h00000000;
+	  BusMuxin <= 32'h00000000;
   end
   else  begin
 	  BusMuxin <= InputData;
