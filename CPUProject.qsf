@@ -77,3 +77,4 @@ set_global_assignment -name VERILOG_FILE sel_encode.v
 set_global_assignment -name VERILOG_FILE register_r0.v
 set_global_assignment -name VERILOG_FILE inport.v
 set_global_assignment -name VERILOG_FILE outport.v
+set_global_assignment -name VERILOG_FILE con_ff.v
