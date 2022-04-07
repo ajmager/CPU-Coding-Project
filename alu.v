@@ -21,7 +21,7 @@ module alu(
         case(ALU_Sel)
         4'b0001: // Addition
            	RLo <= {A+B};
-        4'b0010: // Subtraction
+	  4'b0010: // Subtraction
            	RLo <= A - B;
         4'b0011: // Multiplication
 			begin
@@ -48,7 +48,7 @@ module alu(
         4'b1011: // negate
            	RLo <= ~B+1; 
         4'b1100: // XOR   
-           	RLo <=  A ^ B; 
+				RLo <= ~B;				//RLo <=  A ^ B; 
         4'b1101: // NOR
            	RLo <=  ~(A | B);
         4'b1110: //NAND

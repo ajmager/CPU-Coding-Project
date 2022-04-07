@@ -199,11 +199,11 @@ begin
 							#15 R2out<=0;	Yin<=0;
 		end
 		T4: begin
-							R4out<=1;	ALU_select<=4'b0011;	Zin<=1;   // opcode hardco
+							R4out<=1;	ALU_select<=4'b1000;	Zin<=1;   // opcode hardco
 							#25 R4out<=0;	Zin<=0;
 		end
 		T5: begin
-							Zlowout<=1;	R5in<=1;
+							#10 Zlowout<=1;	R5in<=1;
 							#25 Zlowout<=0;	R5in<=0;
 		end
 	endcase

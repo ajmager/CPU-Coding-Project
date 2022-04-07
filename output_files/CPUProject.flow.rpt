@@ -1,5 +1,5 @@
 Flow report for CPUProject
-Thu Mar 03 17:06:22 2022
+Tue Mar 08 22:51:53 2022
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,21 +40,21 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 03 17:06:22 2022            ;
+; Flow Status                        ; Successful - Tue Mar 08 22:51:52 2022            ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; CPUProject                                       ;
 ; Top-level Entity Name              ; datapath                                         ;
 ; Family                             ; Cyclone III                                      ;
 ; Device                             ; EP3C16F484C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 9,005                                            ;
-;     Total combinational functions  ; 8,429                                            ;
+; Total logic elements               ; 7,028                                            ;
+;     Total combinational functions  ; 6,452                                            ;
 ;     Dedicated logic registers      ; 768                                              ;
 ; Total registers                    ; 768                                              ;
 ; Total pins                         ; 185                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
-; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 6                                                ;
 ; Total PLLs                         ; 0                                                ;
 +------------------------------------+--------------------------------------------------+
 
@@ -64,37 +64,37 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/03/2022 17:06:07 ;
+; Start date & time ; 03/08/2022 22:51:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CPUProject          ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                     ;
-+--------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+--------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589188.164634516706544 ; --            ; --          ; --             ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                             ; --            ; --          ; datapath_tb    ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; datapath_tb                    ; --            ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_FILE                  ; datapath_tb.v                  ; --            ; --          ; datapath_tb    ;
-; EDA_TEST_BENCH_MODULE_NAME           ; datapath_tb                    ; --            ; --          ; datapath_tb    ;
-; EDA_TEST_BENCH_NAME                  ; datapath_tb                    ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_RUN_SIM_FOR           ; 500 ns                         ; --            ; --          ; datapath_tb    ;
-; EDA_TIME_SCALE                       ; 1 ps                           ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                             ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                              ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                           ; --            ; --          ; --             ;
-; PARTITION_COLOR                      ; 16764057                       ; --            ; datapath    ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING          ; --            ; datapath    ; Top            ;
-; PARTITION_NETLIST_TYPE               ; SOURCE                         ; --            ; datapath    ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                   ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                     ; datapath                       ; CPUProject    ; --          ; --             ;
-+--------------------------------------+--------------------------------+---------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                   ;
++--------------------------------------+------------------------------+---------------+-------------+----------------+
+; Assignment Name                      ; Value                        ; Default Value ; Entity Name ; Section Id     ;
++--------------------------------------+------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                ; 963354559615.164679788911440 ; --            ; --          ; --             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                           ; --            ; --          ; datapath_tb    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; datapath_tb                  ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                  ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)    ; <None>        ; --          ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE              ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                  ; datapath_tb.v                ; --            ; --          ; datapath_tb    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; datapath_tb                  ; --            ; --          ; datapath_tb    ;
+; EDA_TEST_BENCH_NAME                  ; datapath_tb                  ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1000 ns                      ; --            ; --          ; datapath_tb    ;
+; EDA_TIME_SCALE                       ; 1 ps                         ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                           ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                            ; --            ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                         ; --            ; --          ; --             ;
+; PARTITION_COLOR                      ; 16764057                     ; --            ; datapath    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING        ; --            ; datapath    ; Top            ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                       ; --            ; datapath    ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                 ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                     ; datapath                     ; CPUProject    ; --          ; --             ;
++--------------------------------------+------------------------------+---------------+-------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -102,8 +102,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 424 MB              ; 00:00:15                           ;
-; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
+; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 413 MB              ; 00:00:22                           ;
+; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

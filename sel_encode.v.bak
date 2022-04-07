@@ -1,0 +1,11 @@
+// Phase 2 - Select and Encode
+module sel_encode (
+	input Gra, Grb, Grc, Rin, Rout, BAout,
+	input IR,
+	output [31:0] C_sign_extended,
+	output [15:0] RegIn ,RegOut
+);
+
+wire [3:0] Ra, Rb, Rc;
+
+always ()
