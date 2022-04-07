@@ -33,7 +33,8 @@ output [31:0] BUS_data
 	//wire [31:0] BUS_data;
 	
 	//32 bit Register setup
-	register_r0 R0(clk, clr, r0_in, BUS_data, BAout, r0_out);
+	//register_r0 R0(clk, clr, r0_in, BUS_data, BAout, r0_out);
+	register_32 R0(clk, clr, r0_in, BUS_data, r0_out);
 	register_32 R1(clk, clr, r1_in, BUS_data, r1_out);
 	register_32 R2(clk, clr, r2_in, BUS_data, r2_out);
 	register_32 R3(clk, clr, r3_in, BUS_data, r3_out);
