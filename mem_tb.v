@@ -5,7 +5,7 @@ module datapath_tb;
 	reg R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;	//add any other signals to see in your simulation
 	reg IncPC, Read, clr;
 	reg R0in, R1in, R2in,R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
-	
+	reg outPortin,
 	reg HIin, LOin, PCin, IRin, Yin, inPortout, Zin;
 	reg MARin, MDRin;
 	reg inPortin;
@@ -38,6 +38,8 @@ module datapath_tb;
 		.r13_in(R13in),
 		.r14_in(R14in),
 		.r15_in(R15in),
+		
+		.outPort_in(outPortin),
 		
 		.r0out(R0out),
 		.r1out(R1out),
@@ -141,7 +143,7 @@ begin
 							R6in<=0;		R7in<=0;		R8in<=0;
 							R9in<=0;		R10in<=0;	R11in<=0;
 							R12in<=0;	R13in<=0;	R14in<=0;
-							R15in<=0;
+							R15in<=0;	outPort_in<=0;
 							
 							inPortin<=0;	inPortout<=0; Cout<=0;
 							
@@ -186,25 +188,34 @@ begin
 							#25 PCout<=0;	MARin<=0; IncPC<=0;	Zin<=0;
 		end
 		T1: begin
-							#10 Zlowout<=1;	PCin<=1;	MDRin<=1;
-							#25 Zlowout<=0;	PCin<=0;	MDRin<=0;
-							//Mdatain<= 32'h4A920000;		//opcode for "and R5, R2, R4"
+							#10 Zlowout<=1;	PCin<=1;	MDRin<=1; Read<=1;
+							#25 Zlowout<=0;	PCin<=0;	MDRin<=0; Read<=0;
+							Mdatain<= 32'h4A920000;		//opcode for "and R5, R2, R4"
 		end
 		T2: begin
 							MDRout<=1;	IRin<=1;
 							#10 MDRout<=0;	IRin<=0;
 		end
 		T3: begin
-							#10 R2out<=1;	Yin<=1;
-							#15 R2out<=0;	Yin<=0;
+							#10 BAout<=1;	Yin<=1; Grb<=1;
+							#15 BAout<=0;	Yin<=0; Grb<=0;
 		end
 		T4: begin
-							R4out<=1;	ALU_select<=4'b1000;	Zin<=1;   // opcode hardco
-							#25 R4out<=0;	Zin<=0;
+							#10 Cout<=1;	Zin<=1;  ADD<=1; // opcode hardco
+							#25 Cout<=0;	Zin<=0;	 ADD<=0;
 		end
 		T5: begin
-							#10 Zlowout<=1;	R5in<=1;
-							#25 Zlowout<=0;	R5in<=0;
+							#10 Zlowout<=1;	MARin<=1;
+							#25 Zlowout<=0;	MARin<=0;
+		end
+		T6: begin
+							#10 Read<=1; MDRin<=1;	
+							#25 Read<=0; MDRin<=0;
+							Mdatain<= 32'00;
+		end
+		T7: begin
+							#10 MDRout<=1; Gra<=1; Rin<=1;
+							#25 MDRout<=0; Gra<=0; Rin<=0;
 		end
 	endcase
 end
