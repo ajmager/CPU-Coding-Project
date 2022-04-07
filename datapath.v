@@ -3,7 +3,7 @@ module datapath (
 input clk, clr, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r9_in, r10_in, r11_in, r12_in, r13_in, r14_in, r15_in,	//Input Signals
 input PC_in, Inc_PC, IR_in, Y_in, Z_in, HI_in, LO_in,	//Input signals
 input MAR_in, MDR_in, read, //Input Signals
-input inPort_in,	//Input Signal
+input outPort_in,	//Input Signal
 input r0out, r1out, r2out, r3out, r4out, r5out, r6out, r7out, r8out, r9out, r10out, r11out, r12out, r13out, r14out, r15out,	//Output Signals
 input PCout, ZLOWout, ZHIout, LOout, HIout, MDRout, inPortout, Cout,	//Output Signals
 input [3:0] ALU_select,
@@ -61,6 +61,9 @@ output [31:0] BUS_data
 	
 	register_32 Y(clk, clr, Y_in, BUS_data, Y_out); 
 	register_64 Z(clk, clr, Z_in, ZHIout, ZLOWout, ALU_out, Z_out);
+	
+	inport INPORT(clk, clr, inPort_out, BUS_data);
+	outport OUTPORT(clk, clr, outPort_in, BUS_data, outPort_out);
 	
 	
 	//ALU
